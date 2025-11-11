@@ -22,39 +22,41 @@
 </head>
 <body class="font-sans bg-gray-50 text-gray-800 antialiased">
 
+    <header class="sticky top-0 z-50 w-full bg-gray-50 shadow-md">
+        <div class="max-w-4xl mx-auto px-6 py-6"> <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-900">
+                        TJJZ
+                    </h1>
+                    <p class="text-xl text-gray-600 mt-2">
+                        Integrated Engineering Student at The University of British Columbia
+                    </p>
+                    <nav class="mt-6">
+                        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+                            <li><a href="#about" class="text-lg font-medium text-gray-600 hover:text-blue-600">About</a></li>
+                            <li><a href="#experience" class="text-lg font-medium text-gray-600 hover:text-blue-600">Experience</a></li>
+                            <li><a href="#projects" class="text-lg font-medium text-gray-600 hover:text-blue-600">Projects</a></li>
+                            <li><a href="#contact" class="text-lg font-medium text-gray-600 hover:text-blue-600">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <a href="resume.pdf" target="_blank" class="mt-6 md:mt-0 inline-block bg-blue-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </header>
     <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
 
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
-            <div>
-                <h1 class="text-4xl font-bold text-gray-900">
-                    TJJZ
-                </h1>
-                <p class="text-xl text-gray-600 mt-2">
-                    Integrated Engineering Student at The University of British Columbia
-                </p>
-                <nav class="mt-6">
-                    <ul class="flex flex-wrap gap-x-6 gap-y-2">
-                        <li><a href="#about" class="text-lg font-medium text-gray-600 hover:text-blue-600">About</a></li>
-                        <li><a href="#experience" class="text-lg font-medium text-gray-600 hover:text-blue-600">Experience</a></li>
-                        <li><a href="#projects" class="text-lg font-medium text-gray-600 hover:text-blue-600">Projects</a></li>
-                        <li><a href="#contact" class="text-lg font-medium text-gray-600 hover:text-blue-600">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <a href="resume.pdf" target="_blank" class="mt-6 md:mt-0 inline-block bg-blue-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
-                Download Resume
-            </a>
-            </header>
-
         <main>
-            <section id="about" class="mb-16">
+            <section id="about" class="mb-16 scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">About Me</h2>
                 <p class="text-lg text-gray-700 leading-relaxed">
                    dddddddddddddd
                 </p>
             </section>
 
-            <section id="experience" class="mb-16">
+            <section id="experience" class="mb-16 scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Experience</h2>
                 <div class="space-y-10">
                     <div class="p-6 bg-white rounded-lg shadow-md">
@@ -68,10 +70,10 @@
                             <li>Assisted senior engineers with CAD modeling in SolidWorks.</li>
                         </ul>
                     </div>
-                    </div>
+                </div>
             </section>
 
-            <section id="projects" class="mb-16">
+            <section id="projects" class="mb-16 scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -104,7 +106,7 @@
                     </div>
             </section>
 
-            <section id="contact">
+            <section id="contact" class="scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Get In Touch</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     I'm always open to discussing new projects, creative ideas, or opportunities.
