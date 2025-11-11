@@ -26,27 +26,24 @@
     <header class="sticky top-0 z-50 w-full bg-gray-50 shadow-md">
         <div class="max-w-4xl mx-auto px-6 py-6">
             <!-- 
-                CHANGES MADE HERE:
-                1. Removed the extra <div> wrapper.
-                2. <h1> and <nav> are now siblings.
-                3. The container is now "items-center" for vertical alignment.
+                START OF HEADER CHANGES
+                This is now a 3-column layout on desktop (md:).
+                It stacks vertically on mobile (flex-col).
             -->
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <h1 class="text-4xl font-bold text-gray-900">
-                    TJJZ
-                </h1>
+
+                <!-- LEFT: Name -->
+                <!-- On desktop, this takes up 1/3 of the space -->
+                <div class="md:flex-1">
+                    <h1 class="text-4xl font-bold text-gray-900">
+                        TJJZ
+                    </h1>
+                </div>
                 
-                <!-- 
-                    CHANGES MADE HERE:
-                    1. Added "mt-6 md:mt-0" for correct spacing on mobile/desktop.
-                -->
+                <!-- MIDDLE: Nav -->
+                <!-- Sits in the middle on desktop, stacks on mobile -->
                 <nav class="mt-6 md:mt-0">
-                    <!-- 
-                        CHANGES MADE HERE:
-                        1. Links are now "text-xl".
-                        2. Gap is now "gap-x-8".
-                    -->
-                    <ul class="flex flex-wrap gap-x-8 gap-y-2">
+                    <ul class="flex flex-wrap gap-x-8 gap-y-2 justify-center">
                         <li><a href="#about" class="text-xl font-medium text-gray-600 hover:text-blue-600">About</a></li>
                         <li><a href="#resume" class="text-xl font-medium text-gray-600 hover:text-blue-600">Resume</a></li>
                         <li><a href="#experience" class="text-xl font-medium text-gray-600 hover:text-blue-600">Experience</a></li>
@@ -54,6 +51,38 @@
                         <li><a href="#contact" class="text-xl font-medium text-gray-600 hover:text-blue-600">Contact</a></li>
                     </ul>
                 </nav>
+
+                <!-- RIGHT: Socials -->
+                <!-- Takes up 1/3 of space on desktop and pushes icons to the right -->
+                <div class="md:flex-1 flex justify-center md:justify-end mt-6 md:mt-0">
+                    <div class="flex items-center space-x-6">
+                        
+                        <!-- LinkedIn -->
+                        <a href="#" target="_blank" class="text-gray-600 hover:text-blue-600" title="LinkedIn">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        
+                        <!-- GitHub -->
+                        <a href="https://github.com/tttjjjzzz" target="_blank" class="text-gray-600 hover:text-blue-600" title="GitHub">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                        
+                        <!-- Instagram -->
+                        <a href="#" target="_blank" class="text-gray-600 hover:text-blue-600" title="Instagram">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C8.134 2 7.828 2.008 6.94 2.05A5.88 5.88 0 004.05 4.05C4.008 4.94 4 5.134 4 8c0 .307 0 .36.002.43.016.92.12 1.55.3 2.11.19.64.49 1.2.9 1.62.4.43.98.7 1.62.9.56.18 1.19.28 2.11.3.07.002.12.002.43.002 2.866 0 3.172-.008 4.06-.05a5.88 5.88 0 002.9-2.9C19.992 13.06 20 12.866 20 10c0-.307 0-.36-.002-.43-.016-.92-.12-1.55-.3-2.11-.19-.64-.49-1.2-.9-1.62-.4-.43-.98-.7-1.62-.9-.56-.18-1.19-.28-2.11-.3-.07-.002-.12-.002-.43-.002-2.866 0-3.172.008-4.06.05A5.88 5.88 0 005.05 5.05C5.008 5.94 5 6.134 5 10c0 .307 0 .36.002.43.016.92.12 1.55.3 2.11.19.64.49 1.2.9 1.62.4.43.98.7 1.62.9.56.18 1.19.28 2.11.3.07.002.12.002.43.002 2.866 0 3.172-.008 4.06-.05a5.88 5.88 0 002.9-2.9C18.992 11.06 19 10.866 19 8c0-2.866-.008-3.172-.05-4.06a5.88 5.88 0 00-2.9-2.9C14.06 1.008 13.866 1 11 1zm-2 3.5A3.5 3.5 0 1010 12a3.5 3.5 0 00-2-3.5zm2 8.5A2.5 2.5 0 1110 10a2.5 2.5 0 012 2.5zm3.5-6.5a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" /></svg>
+                        </a>
+                        
+                        <!-- Email -->
+                        <a href="mailto:your-email@example.com" class="text-gray-600 hover:text-blue-600" title="Email">
+                            <span class="sr-only">Email</span>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.003 5.884L1.992 18.217C1.992 19.1 2.6 20 3.333 20h17.333c.734 0 1.341-.9 1.341-1.783V5.884l-7.409 6.27a3.003 3.003 0 01-3.72 0L2.003 5.884zM22.667 4c0-.733-.607-1.333-1.341-1.333H3.333C2.6 2.667 2 3.267 2 4v.217l10 8.483 10-8.483V4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- END OF HEADER CHANGES -->
             </div>
         </div>
     </header>
@@ -63,10 +92,12 @@
 
         <main>
             <!-- 
-                This "scroll-mt-32" (or similar) is still needed 
-                to offset the height of the sticky header.
+                START OF SCROLL-MARGIN CHANGES
+                Because the header is much taller on mobile now,
+                I've made the scroll-margin responsive.
+                It's large on mobile (scroll-mt-64) and smaller on desktop (md:scroll-mt-32).
             -->
-            <section id="about" class="mb-16 scroll-mt-32">
+            <section id="about" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">About Me</h2>
                 <p class="text-lg text-gray-700 leading-relaxed">
                    dddddddddddddd
@@ -74,7 +105,7 @@
             </section>
 
             <!-- Resume Section -->
-            <section id="resume" class="mb-16 scroll-mt-32">
+            <section id="resume" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Resume</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 bg-white rounded-lg shadow-md">
@@ -123,7 +154,7 @@
 
 
             <!-- Experience Section -->
-            <section id="experience" class="mb-16 scroll-mt-32">
+            <section id="experience" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Experience</h2>
                 <div class="space-y-10">
                     <div class="p-6 bg-white rounded-lg shadow-md">
@@ -141,7 +172,7 @@
             </section>
 
             <!-- Projects Section -->
-            <section id="projects" class="mb-16 scroll-mt-32">
+            <section id="projects" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -175,7 +206,7 @@
             </section>
 
             <!-- Contact Section -->
-            <section id="contact" class="scroll-mt-32">
+            <section id="contact" class="scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-2">Get In Touch</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     I'm always open to discussing new projects, creative ideas, or opportunities.
