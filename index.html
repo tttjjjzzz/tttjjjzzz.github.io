@@ -24,16 +24,21 @@
 
     <!-- Sticky Header -->
     <header class="sticky top-0 z-50 w-full bg-gray-50 shadow-md">
-        <div class="max-w-4xl mx-auto px-6 py-6">
+        <!-- 
+            CHANGE 1:
+            Replaced "max-w-4xl" with "max-w-7xl" to make the header wider.
+        -->
+        <div class="max-w-7xl mx-auto px-6 py-6">
             <!-- 
-                START OF HEADER CHANGES
-                This is now a 3-column layout on desktop (md:).
-                It stacks vertically on mobile (flex-col).
+                This is the 3-column layout.
+                - flex-col (mobile)
+                - md:flex-row (desktop)
+                - justify-between (spreads the 3 items out)
             -->
             <div class="flex flex-col md:flex-row justify-between items-center">
 
                 <!-- LEFT: Name -->
-                <!-- On desktop, this takes up 1/3 of the space -->
+                <!-- md:flex-1 makes this section take up 1/3 of the space -->
                 <div class="md:flex-1">
                     <h1 class="text-4xl font-bold text-gray-900">
                         TJJZ
@@ -41,7 +46,7 @@
                 </div>
                 
                 <!-- MIDDLE: Nav -->
-                <!-- Sits in the middle on desktop, stacks on mobile -->
+                <!-- This section sits in the middle -->
                 <nav class="mt-6 md:mt-0">
                     <ul class="flex flex-wrap gap-x-8 gap-y-2 justify-center">
                         <li><a href="#about" class="text-xl font-medium text-gray-600 hover:text-blue-600">About</a></li>
@@ -53,7 +58,7 @@
                 </nav>
 
                 <!-- RIGHT: Socials -->
-                <!-- Takes up 1/3 of space on desktop and pushes icons to the right -->
+                <!-- md:flex-1 (takes 1/3 space) + md:justify-end (pushes icons to the right) -->
                 <div class="md:flex-1 flex justify-center md:justify-end mt-6 md:mt-0">
                     <div class="flex items-center space-x-6">
                         
@@ -69,10 +74,12 @@
                             <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                         </a>
                         
-                        <!-- Instagram -->
+                        <!-- Instagram (Corrected Icon) -->
                         <a href="#" target="_blank" class="text-gray-600 hover:text-blue-600" title="Instagram">
                             <span class="sr-only">Instagram</span>
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C8.134 2 7.828 2.008 6.94 2.05A5.88 5.88 0 004.05 4.05C4.008 4.94 4 5.134 4 8c0 .307 0 .36.002.43.016.92.12 1.55.3 2.11.19.64.49 1.2.9 1.62.4.43.98.7 1.62.9.56.18 1.19.28 2.11.3.07.002.12.002.43.002 2.866 0 3.172-.008 4.06-.05a5.88 5.88 0 002.9-2.9C19.992 13.06 20 12.866 20 10c0-.307 0-.36-.002-.43-.016-.92-.12-1.55-.3-2.11-.19-.64-.49-1.2-.9-1.62-.4-.43-.98-.7-1.62-.9-.56-.18-1.19-.28-2.11-.3-.07-.002-.12-.002-.43-.002-2.866 0-3.172.008-4.06.05A5.88 5.88 0 005.05 5.05C5.008 5.94 5 6.134 5 10c0 .307 0 .36.002.43.016.92.12 1.55.3 2.11.19.64.49 1.2.9 1.62.4.43.98.7 1.62.9.56.18 1.19.28 2.11.3.07.002.12.002.43.002 2.866 0 3.172-.008 4.06-.05a5.88 5.88 0 002.9-2.9C18.992 11.06 19 10.866 19 8c0-2.866-.008-3.172-.05-4.06a5.88 5.88 0 00-2.9-2.9C14.06 1.008 13.866 1 11 1zm-2 3.5A3.5 3.5 0 1010 12a3.5 3.5 0 00-2-3.5zm2 8.5A2.5 2.5 0 1110 10a2.5 2.5 0 012 2.5zm3.5-6.5a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" /></svg>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C8.134 2 7.828 2.008 6.94 2.05C4.05 2.19 2.19 4.05 2.05 6.94C2.008 7.828 2 8.134 2 12C2 15.866 2.008 16.172 2.05 17.06C2.19 19.95 4.05 21.81 6.94 21.95C7.828 21.992 8.134 22 12 22C15.866 22 16.172 21.992 17.06 21.95C19.95 21.81 21.81 19.95 21.95 17.06C21.992 16.172 22 15.866 22 12C22 8.134 21.992 7.828 21.95 6.94C21.81 4.05 19.95 2.19 17.06 2.05C16.172 2.008 15.866 2 12 2ZM12 4C15.691 4 15.921 4.01 16.81 4.05C18.9 4.17 20.17 5.4 20.29 7.19C20.33 8.079 20.34 8.309 20.34 12C20.34 15.691 20.33 15.921 20.29 16.81C20.17 18.9 18.9 20.17 16.81 20.29C15.921 20.33 15.691 20.34 12 20.34C8.309 20.34 8.079 20.33 7.19 20.29C5.1 20.17 3.83 18.9 3.71 16.81C3.67 15.921 3.66 15.691 3.66 12C3.66 8.309 3.67 8.079 3.71 7.19C3.83 5.1 5.1 3.83 7.19 3.71C8.079 3.67 8.309 3.66 12 3.66V4ZM12 7C9.239 7 7 9.239 7 12C7 14.761 9.239 17 12 17C14.761 17 17 14.761 17 12C17 9.239 14.761 7 12 7ZM12 9C13.657 9 15 10.343 15 12C15 13.657 13.657 15 12 15C10.343 15 9 13.657 9 12C9 10.343 10.343 9 12 9ZM17.25 5.5C16.56 5.5 16 6.06 16 6.75C16 7.44 16.56 8 17.25 8C17.94 8 18.5 7.44 18.5 6.75C18.5 6.06 17.94 5.5 17.25 5.5Z" clip-rule="evenodd"/>
+                            </svg>
                         </a>
                         
                         <!-- Email -->
@@ -82,20 +89,22 @@
                         </a>
                     </div>
                 </div>
-                <!-- END OF HEADER CHANGES -->
             </div>
         </div>
     </header>
 
     <!-- Main Content Area -->
-    <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+    <!-- 
+        CHANGE 2:
+        Replaced "max-w-4xl" with "max-w-7xl" to make the main content
+        match the new header width.
+    -->
+    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
 
         <main>
             <!-- 
-                START OF SCROLL-MARGIN CHANGES
-                Because the header is much taller on mobile now,
-                I've made the scroll-margin responsive.
-                It's large on mobile (scroll-mt-64) and smaller on desktop (md:scroll-mt-32).
+                This scroll-margin is responsive to account for the
+                taller header on mobile.
             -->
             <section id="about" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">About Me</h2>
@@ -186,7 +195,7 @@
                         <p class="text-gray-700">
                             Designed and built a 3-axis robotic arm using 3D-printed parts and an
                             Arduino controller.
-                        </p>
+                        </d>
                         <span class="inline-block mt-4 text-blue-600 font-medium group-hover:underline">
                             View Project Details &rarr;
                         </span>
@@ -197,7 +206,7 @@
                         <p class="text-gray-700">
                             Modeled a closed-loop geothermal heating system using Python to analyze
                             thermal efficiency.
-                        </p>
+                        </d>
                         <span class="inline-block mt-4 text-blue-600 font-medium group-hover:underline">
                             View Project Details &rarr;
                         </span>
