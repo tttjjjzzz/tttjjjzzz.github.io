@@ -189,7 +189,7 @@
                 </div>
 
                 <!-- Scroll Down Indicator -->
-                <div class="flex justify-center mt-24">
+                <div class="flex justify-center mt-48">
                     <style>
                         @keyframes bounce {
                             0%, 100% { transform: translateY(0); }
@@ -199,12 +199,69 @@
                             animation: bounce 2s infinite;
                         }
                     </style>
-                    <svg class="scroll-indicator w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
+                    <a href="#experience" class="scroll-indicator text-gray-400 hover:text-gray-200 transition-colors cursor-pointer">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
             </main>
+        </div>
+    </section>
+
+    <!-- Experience Section - Full Width Background -->
+    <section id="experience" class="w-full bg-blue-50 scroll-mt-64 md:scroll-mt-32">
+        <div class="max-w-8xl mx-auto px-6 pt-20 md:pt-32 pb-20 md:pb-32">
+            <h2 class="text-5xl font-bold text-gray-900 text-center">Professional Experience</h2>
+            <!-- Centered border element -->
+            <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-24"></div>
+            
+            <div class="max-w-6xl mx-auto space-y-8">
+                <!-- Hardware Verification Engineer - Intern (Most Recent) -->
+                <div class="p-6 bg-white rounded-2xl shadow-md flex items-start gap-6">
+                    <img src="consen_automation_logo.jpg" alt="Consen Automation Logo" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
+                    <div class="flex-1">
+                        <header class="flex flex-row justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2">Hardware Verification Engineer - Intern</h3>
+                                <h4 class="text-xl font-bold text-blue-600 mt-2 mb-2">Consen Automation</h4>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-lg font-semibold text-gray-700">Beijing, China</span>
+                                <span class="text-lg font-semibold text-gray-500 mt-1">May 2025 – Aug 2025</span>
+                            </div>
+                        </header>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Developed hardware verification procedures for two communication module PCBs (Ethernet to Fiber Optic), ensuring compliance with design requirements</li>
+                            <li>Collaborated with hardware and firmware engineers to analyze, revise, and debug two versions of a communication module PCB through SMT/THT soldering and various signal measurement techniques</li>
+                            <li>Supported compliance testing (temperature, and ESD) for multiple in-house communication module PCBs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hardware Engineer - Intern -->
+                <div class="p-6 bg-white rounded-2xl shadow-md flex items-start gap-6">
+                    <img src="consen_automation_logo.jpg" alt="Consen Automation Logo" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
+                    <div class="flex-1">
+                        <header class="flex flex-row justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2">Hardware Engineer - Intern</h3>
+                                <h4 class="text-xl font-bold text-blue-600 mt-2 mb-2">Consen Automation</h4>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-lg font-semibold text-gray-700">Beijing, China</span>
+                                <span class="text-lg font-semibold text-gray-500 mt-1">May 2024 – Aug 2024</span>
+                            </div>
+                        </header>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Designed and optimized CAN bus to Fiber Optic communication module schematic and PCB using Cadence Allegro/OrCAD</li>
+                            <li>Planned and conducted design verification (power, clock, logic and status, reset, ripple and noise, and timing signals) for various embedded hardware products to ensure performance and compliance with design specifications</li>
+                            <li>Gained practical experience working with CAN, RS485, SPI, USART, Ethernet (APL), and Fiber Optic protocols in embedded systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -212,29 +269,9 @@
     <div class="max-w-8xl mx-auto px-6 py-12 md:py-20">
 
         <main>
-            <section id="experience" class="mb-16 scroll-mt-64 md:scroll-mt-32">
-                <h2 class="text-3xl font-bold text-gray-900 text-center">Experience</h2>
-                <!-- Centered border element -->
-                <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
-                
-                <div class="space-y-10">
-                    <div class="p-6 bg-white rounded-lg shadow-md">
-                        <header class="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
-                            <h3 class="text-xl font-bold text-gray-900">Engineering Intern</h3>
-                            <span class="text-gray-500 text-sm mt-2 sm:mt-0">May 2024 - Aug 2024</span>
-                        </header>
-                        <h4 class="text-lg font-semibold text-blue-600 mb-3">[Company Name]</h4>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Used MATLAB to analyze performance data from...</li>
-                            <li>Assisted senior engineers with CAD modeling in SolidWorks.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
             <!-- Projects Section -->
             <section id="projects" class="mb-16 scroll-mt-64 md:scroll-mt-32">
-                <h2 class="text-3xl font-bold text-gray-900 text-center">Projects</h2>
+                <h2 class="text-5xl font-bold text-gray-900 text-center">Projects</h2>
                 <!-- Centered border element -->
                 <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
 
@@ -271,7 +308,7 @@
 
             <!-- Resume Section -->
             <section id="resume" class="mb-16 scroll-mt-64 md:scroll-mt-32">
-                <h2 class="text-3xl font-bold text-gray-900 text-center">Resume</h2>
+                <h2 class="text-5xl font-bold text-gray-900 text-center">Resume</h2>
                 <!-- Centered border element -->
                 <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
                 
@@ -322,7 +359,7 @@
 
             <!-- Contact Section -->
             <section id="contact" class="scroll-mt-64 md:scroll-mt-32">
-                <h2 class="text-3xl font-bold text-gray-900 text-center">Get In Touch</h2>
+                <h2 class="text-4xl font-bold text-gray-900 text-center">Get In Touch</h2>
                 <!-- Centered border element -->
                 <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
 
