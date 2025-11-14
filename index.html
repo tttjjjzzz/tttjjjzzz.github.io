@@ -210,8 +210,37 @@
         </div>
     </section>
 
+
+    
     <!-- Experience Section - Full Width Background -->
     <section id="experience" class="w-full bg-blue-50 scroll-mt-64 md:scroll-mt-32">
+                        <style>
+                        .exp-gradient-spawn {
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        .exp-gradient-spawn::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 0%;
+                            z-index: 0;
+                            border-radius: 1rem;
+                            background: linear-gradient(90deg, #a7c7ff 0%, #bafffa 100%);
+                            opacity: 0.5;
+                            transition: width 0.25s cubic-bezier(.4,0,.2,1);
+                        }
+                        .exp-gradient-spawn:hover::before {
+                            width: 100%;
+                        }
+                        .exp-gradient-spawn > * {
+                            position: relative;
+                            z-index: 1;
+                        }
+                        </style>
+                <!-- Underline animation removed -->
         <div class="max-w-8xl mx-auto px-6 pt-20 md:pt-32 pb-20 md:pb-32">
             <h2 class="text-5xl font-bold text-gray-900 text-center">Professional Experience</h2>
             <!-- Centered border element -->
@@ -220,8 +249,8 @@
             <div class="max-w-6xl mx-auto relative space-y-16">
                 
                 <!-- UBC Thunderbots Electrical Team Member -->
-                <div class="p-6 bg-white rounded-2xl shadow-md flex items-start gap-6 pl-16 ml-4 border-2 border-transparent transition-all duration-300 hover:border-blue-400 hover:scale-105 bg-white">
-                    <img src="ubc_thunderbots_logo.jpg" alt="UBC Thunderbots Logo" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
+                <div class="exp-gradient-spawn p-6 bg-white rounded-3xl shadow-md flex items-start gap-6 pl-6 ml-0 transition-transform duration-300 hover:scale-105 bg-white">
+                    <img src="ubc_thunderbots_logo.jpg" alt="UBC Thunderbots Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
                     <div class="flex-1">
                         <header class="flex flex-row justify-between items-start mb-3">
                             <div>
@@ -242,8 +271,8 @@
                 </div>
 
                 <!-- Hardware Verification Engineer - Intern (Most Recent) -->
-                <div class="p-6 bg-white rounded-2xl shadow-md flex items-start gap-6 pl-16 ml-4 border-2 border-transparent transition-all duration-300 hover:border-blue-400 hover:scale-105 bg-white">
-                    <img src="consen_automation_logo.jpg" alt="Consen Automation Logo" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
+                <div class="exp-gradient-spawn p-6 bg-white rounded-3xl shadow-md flex items-start gap-6 pl-6 ml-0 transition-transform duration-300 hover:scale-105 bg-white">
+                    <img src="consen_automation_logo.jpg" alt="Consen Automation Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
                     <div class="flex-1">
                         <header class="flex flex-row justify-between items-start mb-3">
                             <div>
@@ -264,8 +293,8 @@
                 </div>
 
                 <!-- Hardware Engineer - Intern -->
-                <div class="p-6 bg-white rounded-2xl shadow-md flex items-start gap-6 pl-16 ml-4 border-2 border-transparent transition-all duration-300 hover:border-blue-400 hover:scale-105 bg-white">
-                    <img src="consen_automation_logo.jpg" alt="Consen Automation Logo" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
+                <div class="exp-gradient-spawn p-6 bg-white rounded-3xl shadow-md flex items-start gap-6 pl-6 ml-0 transition-transform duration-300 hover:scale-105 bg-white">
+                    <img src="consen_automation_logo.jpg" alt="Consen Automation Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
                     <div class="flex-1">
                         <header class="flex flex-row justify-between items-start mb-3">
                             <div>
@@ -288,6 +317,7 @@
         </div>
     </section>
 
+
     <!-- Main Content Area -->
     <div class="max-w-8xl mx-auto px-6 py-12 md:py-20">
 
@@ -298,9 +328,9 @@
                 <!-- Centered border element -->
                 <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-8">
 
-                    <a href="project-one.html" class="block p-6 bg-white rounded-lg shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform">
+                    <a href="project-one.html" class="block py-3 px-6 bg-white rounded-3xl shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform max-w-2xl mx-auto">
                         <h3 class="text-xl font-bold text-gray-900">
                             Project: 3-Axis Robotic Arm
                         </h3>
@@ -315,7 +345,33 @@
                             View Project Details &rarr;
                         </span>
                     </a>
-                    <a href="project-two.html" class="block p-6 bg-white rounded-lg shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform">
+                    <a href="project-two.html" class="block py-3 px-6 bg-white rounded-3xl shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform max-w-2xl mx-auto">
+                        <h3 class="text-xl font-bold text-gray-900">Water Filtration Analysis</h3>
+                        <h4 class="text-md font-semibold text-gray-600 my-2">Tools: MATLAB, Simulink</h4>
+                        <p class="text-gray-700">
+                            Modeled a closed-loop geothermal heating system using Python to analyze
+                            thermal efficiency.
+                        </p>
+                        <span class="inline-block mt-4 text-blue-600 font-medium group-hover:underline">
+                            View Project Details &rarr;
+                        </span>
+                    </a>
+                    <a href="project-one.html" class="block py-3 px-6 bg-white rounded-3xl shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform max-w-2xl mx-auto">
+                        <h3 class="text-xl font-bold text-gray-900">
+                            Project: 3-Axis Robotic Arm
+                        </h3>
+                        <h4 class="text-md font-semibold text-gray-600 my-2">
+                            Tools: SolidWorks, Arduino, Python
+                        </h4>
+                        <p class="text-gray-700">
+                            Designed and built a 3-axis robotic arm using 3D-printed parts and an
+                            Arduino controller.
+                        </p>
+                        <span class="inline-block mt-4 text-blue-600 font-medium group-hover:underline">
+                            View Project Details &rarr;
+                        </span>
+                    </a>
+                    <a href="project-two.html" class="block py-3 px-6 bg-white rounded-3xl shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform max-w-2xl mx-auto">
                         <h3 class="text-xl font-bold text-gray-900">Water Filtration Analysis</h3>
                         <h4 class="text-md font-semibold text-gray-600 my-2">Tools: MATLAB, Simulink</h4>
                         <p class="text-gray-700">
@@ -328,6 +384,11 @@
                     </a>
                 </div>
             </section>
+
+
+
+
+
 
             <!-- Resume Section -->
             <section id="resume" class="mb-16 scroll-mt-64 md:scroll-mt-32">
