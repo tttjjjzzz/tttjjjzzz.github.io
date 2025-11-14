@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-R">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TJJZ's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,6 +12,9 @@
                     fontFamily: {
                         'sans': ['Inter', 'sans-serif'],
                     },
+                    maxWidth: {
+                        '8xl': '90rem', // 1440px
+                    }
                 },
             },
         }
@@ -22,20 +25,21 @@
 </head>
 <body class="font-sans bg-gray-50 text-gray-800 antialiased">
 
-    <!-- Sticky Header -->
+    <!-- Sticky Header - FULL WIDTH -->
     <header class="sticky top-0 z-50 w-full bg-gray-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-6 py-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between w-full">
+        <!-- Changed: Removed max-w-8xl to make header truly full width, kept px-6 for internal padding -->
+        <div class="w-full px-6 py-6">
+            <div class="flex items-center justify-between w-full">
                 
-                <!-- Left Column: Name -->
+                <!-- Left Column: Name (Visible on all sizes) -->
                 <div class="flex-shrink-0">
                     <h1 class="text-4xl font-bold text-gray-900">
                         TJJZ
                     </h1>
                 </div>
 
-                <!-- Middle Column: Nav Links -->
-                <nav class="mt-6 md:mt-0 md:flex-1 md:flex md:justify-center">
+                <!-- Middle Column: Nav Links (Desktop Only) -->
+                <nav class="hidden md:mt-0 md:flex-1 md:flex md:justify-center">
                     <ul class="flex flex-col md:flex-row flex-wrap gap-y-2 gap-x-8">
                         <li><a href="#about" class="text-xl font-medium text-gray-600 hover:text-blue-600">About</a></li>
                         <li><a href="#resume" class="text-xl font-medium text-gray-600 hover:text-blue-600">Resume</a></li>
@@ -45,8 +49,8 @@
                     </ul>
                 </nav>
 
-                <!-- Right Column: Social Icons -->
-                <div class="flex-shrink-0 flex items-center gap-x-5 mt-6 md:mt-0">
+                <!-- Right Column: Social Icons (Desktop Only) -->
+                <div class="hidden md:flex flex-shrink-0 items-center gap-x-5 mt-6 md:mt-0">
                     <!-- LinkedIn -->
                     <a href="#" target="_blank" class="text-gray-500 hover:text-blue-600">
                         <span class="sr-only">LinkedIn</span>
@@ -70,61 +74,144 @@
                     </a>
                 </div>
 
+                <!-- Mobile Menu Button (Mobile Only) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-xl font-medium text-gray-600 hover:text-blue-600">
+                        Menu ▾
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Mobile Menu Dropdown (Hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-gray-200">
+                <ul class="flex flex-col space-y-3">
+                    <li><a href="#about" class="block text-lg font-medium text-gray-600 hover:text-blue-600">About</a></li>
+                    <li><a href="#resume" class="block text-lg font-medium text-gray-600 hover:text-blue-600">Resume</a></li>
+                    <li><a href="#experience" class="block text-lg font-medium text-gray-600 hover:text-blue-600">Experience</a></li>
+                    <li><a href="#projects" class="block text-lg font-medium text-gray-600 hover:text-blue-600">Projects</a></li>
+                    <li><a href="#contact" class="block text-lg font-medium text-gray-600 hover:text-blue-600">Contact</a></li>
+                </ul>
+                <!-- Social Icons for Mobile Menu -->
+                <div class="flex items-center gap-x-6 pt-4 mt-4 border-t border-gray-200">
+                    <a href="#" target="_blank" class="text-gray-500 hover:text-blue-600">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/tttjjjzzz" target="_blank" class="text-gray-500 hover:text-gray-900">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="mailto:your-email@example.com" class="text-gray-500 hover:text-red-600">
+                        <span class="sr-only">Email</span>
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
-
-        <main>
-            <!-- About Section -->
-            <section id="about" class="mb-32 scroll-mt-64 md:scroll-mt-32">
-                <h2 class="text-5xl font-bold text-gray-900 text-center">Hi, I am Tiger Zhou 👋</h2>
-                <p class="text-3xl text-gray-600 text-center mt-6">
-                    An Integrated Engineering Student at UBC, Passionate in Embedded Systems
-                </p>
+    <!-- About Section - Full Width Background -->
+    <section id="about" class="w-full bg-gray-800 scroll-mt-64 md:scroll-mt-32">
+        <div class="max-w-8xl mx-auto px-6 pt-20 md:pt-32 pb-16 md:pb-32">
+            <main>
+            <!-- About Section Content -->
+            <div class="mb-32">
+                <div class="flex justify-center mb-20">
+                    <style>
+                        @keyframes sway {
+                            0%, 100% { transform: rotate(-2deg); }
+                            50% { transform: rotate(2deg); }
+                        }
+                        .welcome-sign {
+                            animation: sway 2s ease-in-out infinite;
+                            transform-origin: top center;
+                        }
+                    </style>
+                    <div class="welcome-sign flex flex-col items-center">
+                        <svg class="w-24 h-24 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-gray-200 text-2xl font-bold mt-3">W E L C O M E !</p>
+                    </div>
+                </div>
+                <div class="mt-20">
+                    <h2 class="text-5xl md:text-6xl font-bold text-white text-center">Hi, I am Tiger Zhou 👋</h2>
+                    <p class="text-2xl md:text-3xl text-gray-300 text-center mt-8">
+                        An Integrated Engineering Student at UBC,Specializing in Electrical Engineering
+                    </p>
+                </div>
                 <!-- Centered border element -->
-                <div class="w-24 h-1 bg-gray-200 mx-auto mt-8 mb-8"></div>
+                <div class="w-24 h-1 bg-blue-300 mx-auto mt-10 mb-10"></div> 
                 
-                <p class="text-xl text-gray-700 leading-relaxed text-center">
-                   This portfolio aims to supplement my resume by showcasing concrete examples of my involvement in various engineering projects.
-
-                    Included in this portfolio are past/current projects from work experiences, academic courses, and personal projects/extracurricular initiatives.
-
+                <p class="text-lg md:text-2xl text-gray-200 leading-relaxed text-center max-w-3xl mx-auto">
+                    As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges.
                 </p>
+
+                <p class="text-lg md:text-2xl text-gray-200 leading-relaxed text-center max-w-3xl mx-auto mt-6">
+                    My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development
+
+                <p class="text-lg md:text-2xl text-gray-200 leading-relaxed text-center max-w-3xl mx-auto mt-6">
+                    This website aims to showcase concrete examples of my work across various engineering projects.
+                    Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses.
+                </p>
+
 
                 <!-- New Social Icons Container -->
-                <div class="flex justify-center items-center gap-x-8 mt-8">
+                <div class="flex justify-center items-center gap-x-8 mt-12">
                     <!-- LinkedIn -->
-                    <a href="#" target="_blank" class="text-gray-500 hover:text-blue-600">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
                         <span class="sr-only">LinkedIn</span>
                         <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
                     </a>
-
                     <!-- GitHub -->
-                    <a href="https://github.com/tttjjjzzz" target="_blank" class="text-gray-500 hover:text-gray-900">
+                    <a href="https://github.com/tttjjjzzz" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
                         <span class="sr-only">GitHub</span>
                         <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
                         </svg>
                     </a>
-
                     <!-- Email -->
-                    <a href="mailto:your-email@example.com" class="text-gray-500 hover:text-red-600">
+                    <a href="mailto:your-email@example.com" class="text-gray-400 hover:text-blue-400 transition-colors">
                         <span class="sr-only">Email</span>
                         <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
                         </svg>
                     </a>
                 </div>
-            </section>
 
+                <!-- Scroll Down Indicator -->
+                <div class="flex justify-center mt-24">
+                    <style>
+                        @keyframes bounce {
+                            0%, 100% { transform: translateY(0); }
+                            50% { transform: translateY(-10px); }
+                        }
+                        .scroll-indicator {
+                            animation: bounce 2s infinite;
+                        }
+                    </style>
+                    <svg class="scroll-indicator w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+            </main>
+        </div>
+    </section>
 
+    <!-- Main Content Area -->
+    <div class="max-w-8xl mx-auto px-6 py-12 md:py-20">
 
-            <!-- Experience Section -->
+        <main>
             <section id="experience" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 text-center">Experience</h2>
                 <!-- Centered border element -->
@@ -182,8 +269,6 @@
                 </div>
             </section>
 
-
-
             <!-- Resume Section -->
             <section id="resume" class="mb-16 scroll-mt-64 md:scroll-mt-32">
                 <h2 class="text-3xl font-bold text-gray-900 text-center">Resume</h2>
@@ -206,7 +291,6 @@
                                 <strong>Program:</strong> Integrated Engineering (IGEN)
                             </p>
                             <p class="text-lg text-gray-700">
-                                <!-- EDIT THIS -->
                                 <strong>Expected Graduation:</strong> May 2026
                             </p>
                         </div>
@@ -222,7 +306,6 @@
                             </a>
                             <!-- LinkedIn Link -->
                             <a href="#" target="_blank" class="text-lg font-medium text-blue-600 hover:underline">
-                                <!-- EDIT THIS -->
                                 LinkedIn Profile
                             </a>
                             
@@ -235,7 +318,6 @@
 
                 </div>
             </section>
-
 
 
             <!-- Contact Section -->
@@ -251,7 +333,6 @@
                 <!-- Centered button -->
                 <div class="text-center">
                     <a href="mailto:your-email@example.com" class="inline-block bg-blue-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
-                        <!-- EDIT THIS -->
                         Send me an email
                     </a>
                 </div>
@@ -264,6 +345,42 @@
             </p>
         </footer>
     </div>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            // Function to toggle the menu
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+            };
+
+            // Toggle menu when button is clicked
+            menuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Close menu when a navigation link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Close menu when clicking anywhere else on the page
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.classList.contains('hidden') && !menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
