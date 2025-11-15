@@ -76,19 +76,29 @@ function generateExperienceCard(exp) {
  */
 function generateProjectCard(project) {
     return `
-        <a href="${project.link}" class="block py-3 px-6 bg-white rounded-3xl shadow-md transition-shadow hover:shadow-xl hover:scale-105 transition-transform max-w-2xl mx-auto">
-            <h3 class="text-xl font-bold text-gray-900">
-                ${project.title}
-            </h3>
-            <h4 class="text-md font-semibold text-gray-600 my-2">
-                Tools: ${project.tools}
-            </h4>
-            <p class="text-gray-700">
-                ${project.description}
-            </p>
-            <span class="inline-block mt-4 text-blue-600 font-medium group-hover:underline">
-                View Project Details &rarr;
-            </span>
+        <a href="${project.link}" class="project-card block py-3 px-6 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-all max-w-2xl mx-auto" style="min-height: 220px;">
+            <div class="project-card-content">
+                <h3 class="text-xl font-bold text-gray-900">
+                    ${project.title}
+                </h3>
+                <h4 class="text-md font-semibold text-gray-600 my-2">
+                    Tools: ${project.tools}
+                </h4>
+                <p class="text-gray-700">
+                    ${project.description}
+                </p>
+                <span class="inline-block mt-4 text-blue-600 font-medium">
+                    View Project Details &rarr;
+                </span>
+            </div>
+            <div class="project-card-overlay">
+                <div class="text-center px-6">
+                    <svg class="w-16 h-16 mx-auto mb-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                    </svg>
+                    <p class="text-2xl font-bold text-white">Click to Learn More</p>
+                </div>
+            </div>
         </a>
     `;
 }

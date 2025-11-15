@@ -49,3 +49,68 @@
 .scroll-indicator {
     animation: bounce 2s infinite;
 }
+
+/* Project Card Animated Gradient */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #a7c7ff, #bafffa, #a7c7ff, #bafffa);
+    background-size: 300% 300%;
+    opacity: 0;
+    z-index: 0;
+    border-radius: 1.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.project-card:hover::before {
+    opacity: 0.85;
+    animation: gradientShift 3s ease infinite;
+}
+
+.project-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card-content {
+    transition: opacity 0.25s ease;
+}
+
+.project-card:hover .project-card-content {
+    opacity: 0;
+}
+
+.project-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.25s ease 0.1s;
+}
+
+.project-card:hover .project-card-overlay {
+    opacity: 1;
+}
