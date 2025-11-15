@@ -343,7 +343,8 @@ body {
 .exp-gradient-spawn {
     position: relative;
     overflow: hidden;
-    background: rgba(243,244,246,0.60); /* translucent gray-100 */
+    background: rgba(243,244,246,0.24); /* further increased translucency (darker via backdrop) */
+    border: 2px solid rgba(255,255,255,0.35); /* thicker subtle border */
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     /* smoother combined transform + shadow transition */
@@ -359,13 +360,25 @@ body {
     width: calc(100% + 6px);
     height: calc(100% + 6px);
     border-radius: 1.1rem;
-    background: linear-gradient(45deg, #cbbff0, #b3a3e6, #9f8bdc, #6b5f94, #523f9e, #41327e, #31255e, #9f8bdc, #cbbff0);
-    background-size: 420% 420%;
-    filter: blur(6px);
+    /* Pastel gradient with a touch more contrast; widened spread to reduce seam */
+    background: linear-gradient(45deg,
+        #f5f0fe,
+        #ebe3fb,
+        #e1d6f8,
+        #d7caf5,
+        #cdbef2,
+        #c2b2ef,
+        #b7a6ec,
+        #ac9ae9,
+        #b7a6ec,
+        #f5f0fe
+    );
+    background-size: 500% 500%;
+    filter: blur(12px);
     opacity: 0;
     transition: opacity .35s ease-in-out;
     z-index: 0;
-    animation: expGlow 18s linear infinite;
+    /* Removed sliding animation for static glow */
 }
 
 @keyframes expGlow {
@@ -386,6 +399,27 @@ body {
 .exp-gradient-spawn:hover {
     transform: translateY(-4px) scale(1.035);
     box-shadow: 0 14px 34px -12px rgba(50,37,94,0.45), 0 6px 14px -4px rgba(0,0,0,0.25);
+}
+
+/* Default light text inside card */
+.exp-gradient-spawn h3,
+.exp-gradient-spawn h4,
+.exp-gradient-spawn span,
+.exp-gradient-spawn li,
+.exp-gradient-spawn p,
+.exp-gradient-spawn ul {
+    color: #f3f4f6 !important;
+    transition: color .28s ease;
+}
+
+/* Darker text on hover */
+.exp-gradient-spawn:hover h3,
+.exp-gradient-spawn:hover h4,
+.exp-gradient-spawn:hover span,
+.exp-gradient-spawn:hover li,
+.exp-gradient-spawn:hover p,
+.exp-gradient-spawn:hover ul {
+    color: #1f2937 !important; /* gray-800 */
 }
 
 /* Welcome Sign Swaying Animation */
@@ -439,8 +473,7 @@ body {
 }
 
 .project-card:hover::before {
-    opacity: 0.85;
-    animation: gradientShift 3s ease infinite;
+    opacity: 0.85; /* static gradient, no sliding fill */
 }
 
 .project-card > * {
