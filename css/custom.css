@@ -342,8 +342,9 @@ body {
 /* Experience Card Gradient Animation */
 .exp-gradient-spawn {
     position: relative;
+    isolation: isolate;
     overflow: visible;
-    background: rgba(243,244,246,0.08); /* further decreased opacity */
+    background: rgba(243,244,246,0.05); /* decreased opacity to 0.05 */
     border: 2px solid transparent; /* fully transparent border */
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -557,4 +558,21 @@ body {
 
 #about-social a:hover:before {
   top: 0;
+}
+
+/* Header text and icon color to match experience cards */
+header h1,
+header a,
+header button,
+header nav a,
+#header-social a,
+#header-social-mobile a,
+header svg {
+    color: #f3f4f6 !important;
+}
+
+/* Keep hover color consistent (no darkening) */
+header a:hover,
+header button:hover {
+    color: #f3f4f6 !important;
 }
