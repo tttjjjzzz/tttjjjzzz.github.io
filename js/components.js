@@ -133,7 +133,7 @@ function initializePage() {
     // Social Icons - About Section
     const aboutSocial = document.getElementById('about-social');
     if (aboutSocial) {
-        aboutSocial.innerHTML = generateSocialIcons(SITE_CONFIG.social, 'w-12 h-12').replace(/text-gray-500/g, 'text-gray-400').replace(/hover:text-blue-600|hover:text-gray-900|hover:text-red-600/g, 'hover:text-blue-400');
+        aboutSocial.innerHTML = generateSocialIcons(SITE_CONFIG.social, 'w-9 h-9');
     }
     
     // Experience Cards
