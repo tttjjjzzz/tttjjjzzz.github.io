@@ -50,13 +50,13 @@ function generateSocialIcons(socialLinks, size = 'w-7 h-7') {
  */
 function generateExperienceCard(exp) {
     return `
-        <div class="exp-gradient-spawn p-6 bg-white rounded-3xl shadow-md flex items-start gap-6 pl-6 ml-0 transition-transform duration-300 hover:scale-105 bg-white">
+        <div class="exp-gradient-spawn group p-6 rounded-3xl shadow-md flex items-start gap-6 pl-6 ml-0 transition-transform duration-300 hover:scale-105 bg-gray-100/60 backdrop-blur-sm border border-white/20">
             <img src="${exp.logo}" alt="${exp.company} Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
             <div class="flex-1">
                 <header class="flex flex-row justify-between items-start mb-3">
                     <div>
                         <h3 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2">${exp.role}</h3>
-                        <h4 class="text-xl font-bold text-blue-600 mt-2 mb-2">${exp.company}</h4>
+                        <h4 class="text-xl font-bold text-gray-700 mt-2 mb-2">${exp.company}</h4>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="text-lg font-semibold text-gray-700">${exp.location}</span>

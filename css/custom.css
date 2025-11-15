@@ -343,6 +343,11 @@ body {
 .exp-gradient-spawn {
     position: relative;
     overflow: hidden;
+    background: rgba(243,244,246,0.60); /* translucent gray-100 */
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    /* smoother combined transform + shadow transition */
+    transition: transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .38s cubic-bezier(.22,.61,.36,1);
 }
 
 .exp-gradient-spawn::before {
@@ -354,9 +359,9 @@ body {
     width: 0%;
     z-index: 0;
     border-radius: 1rem;
-    background: linear-gradient(90deg, #a7c7ff 0%, #bafffa 100%);
-    opacity: 0.5;
-    transition: width 0.25s cubic-bezier(.4,0,.2,1);
+    background: linear-gradient(90deg, #cbbff0 0%, #b3a3e6 50%, #9f8bdc 100%);
+    opacity: 0.55;
+    transition: width 0.4s cubic-bezier(.4,0,.2,1);
 }
 
 .exp-gradient-spawn:hover::before {
@@ -366,6 +371,11 @@ body {
 .exp-gradient-spawn > * {
     position: relative;
     z-index: 1;
+}
+
+.exp-gradient-spawn:hover {
+    transform: translateY(-4px) scale(1.035);
+    box-shadow: 0 14px 34px -12px rgba(50,37,94,0.45), 0 6px 14px -4px rgba(0,0,0,0.25);
 }
 
 /* Welcome Sign Swaying Animation */
