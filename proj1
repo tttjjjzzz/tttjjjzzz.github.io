@@ -25,20 +25,8 @@
 </head>
 <body class="font-sans text-gray-800 antialiased">
 
-    <!-- Animated Wave Background -->
-    <div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
+    <!-- Stripe WebGL Gradient Background -->
+    <canvas id="gradient-canvas"></canvas>
 
     <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
 
@@ -102,5 +90,7 @@
 
     </div>
 
+    <!-- WebGL Gradient -->
+    <script src="js/gradient.js"></script>
 </body>
 </html>
