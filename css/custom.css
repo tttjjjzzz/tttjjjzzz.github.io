@@ -342,47 +342,59 @@ body {
 /* Experience Card Gradient Animation */
 .exp-gradient-spawn {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background: rgba(243,244,246,0.08); /* further decreased opacity */
-    border: 2px solid rgba(255,255,255,0.35); /* thicker subtle border */
+    border: 2px solid transparent; /* fully transparent border */
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     /* smoother combined transform + shadow transition */
-    transition: transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .38s cubic-bezier(.22,.61,.36,1), background .35s ease-in-out;
+    transition: transform .38s cubic-bezier(.22,.61,.36,1);
 }
 
-/* Animated gradient background layer */
-.exp-gradient-spawn::before {
-    content: '';
+/* Animated gradient border glow */
+.exp-gradient-spawn::after {
     position: absolute;
-    inset: 0;
-    border-radius: 1.1rem;
-    /* Light purple gradient background */
-    background: linear-gradient(135deg,
-        rgba(245, 240, 254, 0.7),
-        rgba(235, 227, 251, 0.7),
-        rgba(225, 214, 248, 0.7),
-        rgba(215, 202, 245, 0.7),
-        rgba(205, 190, 242, 0.7),
-        rgba(194, 178, 239, 0.7)
+    content: "";
+    inset: -4px;
+    z-index: -1;
+    border-radius: 1.5rem;
+    padding: 4px;
+    background: linear-gradient(
+        to left,
+        #f5f0fe,
+        #e1d6f8,
+        #cdbef2,
+        #b7a6ec,
+        #9f8bdc,
+        #8770c8,
+        #9f8bdc,
+        #b7a6ec,
+        #cdbef2,
+        #e1d6f8,
+        #f5f0fe
     );
-    background-size: 300% 300%;
+    background-size: 200% 200%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    filter: blur(8px);
     opacity: 0;
     transition: opacity .35s ease-in-out;
-    z-index: 0;
-    animation: purpleGradientShift 6s ease infinite;
-    animation-play-state: paused;
+    animation: animateGlow 2.5s linear infinite;
 }
 
-@keyframes purpleGradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.exp-gradient-spawn:hover::before {
+.exp-gradient-spawn:hover::after {
     opacity: 1;
-    animation-play-state: running;
+}
+
+@keyframes animateGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 .exp-gradient-spawn > * {
@@ -392,10 +404,9 @@ body {
 
 .exp-gradient-spawn:hover {
     transform: translateY(-4px) scale(1.035);
-    box-shadow: 0 14px 34px -12px rgba(50,37,94,0.45), 0 6px 14px -4px rgba(0,0,0,0.25);
 }
 
-/* Default light text inside card */
+/* Light text inside card (no color change on hover) */
 .exp-gradient-spawn h3,
 .exp-gradient-spawn h4,
 .exp-gradient-spawn span,
@@ -403,17 +414,6 @@ body {
 .exp-gradient-spawn p,
 .exp-gradient-spawn ul {
     color: #f3f4f6 !important;
-    transition: color .28s ease;
-}
-
-/* Darker text on hover */
-.exp-gradient-spawn:hover h3,
-.exp-gradient-spawn:hover h4,
-.exp-gradient-spawn:hover span,
-.exp-gradient-spawn:hover li,
-.exp-gradient-spawn:hover p,
-.exp-gradient-spawn:hover ul {
-    color: #1f2937 !important; /* gray-800 */
 }
 
 /* Welcome Sign Swaying Animation */
