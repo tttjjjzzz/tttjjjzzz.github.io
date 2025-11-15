@@ -343,52 +343,46 @@ body {
 .exp-gradient-spawn {
     position: relative;
     overflow: hidden;
-    background: rgba(243,244,246,0.24); /* further increased translucency (darker via backdrop) */
+    background: rgba(243,244,246,0.08); /* further decreased opacity */
     border: 2px solid rgba(255,255,255,0.35); /* thicker subtle border */
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     /* smoother combined transform + shadow transition */
-    transition: transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .38s cubic-bezier(.22,.61,.36,1);
+    transition: transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .38s cubic-bezier(.22,.61,.36,1), background .35s ease-in-out;
 }
 
-/* Glow border animation */
+/* Animated gradient background layer */
 .exp-gradient-spawn::before {
     content: '';
     position: absolute;
-    top: -3px;
-    left: -3px;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
+    inset: 0;
     border-radius: 1.1rem;
-    /* Pastel gradient with a touch more contrast; widened spread to reduce seam */
-    background: linear-gradient(45deg,
-        #f5f0fe,
-        #ebe3fb,
-        #e1d6f8,
-        #d7caf5,
-        #cdbef2,
-        #c2b2ef,
-        #b7a6ec,
-        #ac9ae9,
-        #b7a6ec,
-        #f5f0fe
+    /* Light purple gradient background */
+    background: linear-gradient(135deg,
+        rgba(245, 240, 254, 0.7),
+        rgba(235, 227, 251, 0.7),
+        rgba(225, 214, 248, 0.7),
+        rgba(215, 202, 245, 0.7),
+        rgba(205, 190, 242, 0.7),
+        rgba(194, 178, 239, 0.7)
     );
-    background-size: 500% 500%;
-    filter: blur(12px);
+    background-size: 300% 300%;
     opacity: 0;
     transition: opacity .35s ease-in-out;
     z-index: 0;
-    /* Removed sliding animation for static glow */
+    animation: purpleGradientShift 6s ease infinite;
+    animation-play-state: paused;
 }
 
-@keyframes expGlow {
+@keyframes purpleGradientShift {
     0% { background-position: 0% 50%; }
-    50% { background-position: 400% 50%; }
+    50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
 .exp-gradient-spawn:hover::before {
     opacity: 1;
+    animation-play-state: running;
 }
 
 .exp-gradient-spawn > * {

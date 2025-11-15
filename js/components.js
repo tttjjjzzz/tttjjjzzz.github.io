@@ -51,16 +51,32 @@ function generateSocialIcons(socialLinks, size = 'w-7 h-7') {
 function generateExperienceCard(exp) {
     return `
         <div class="exp-gradient-spawn group p-6 rounded-3xl shadow-md flex items-start gap-6 pl-6 ml-0 transition-transform duration-300 hover:scale-105 bg-gray-100/60 backdrop-blur-sm border border-white/20">
-            <img src="${exp.logo}" alt="${exp.company} Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md border border-gray-200 flex-shrink-0" />
+            <img src="${exp.logo}" alt="${exp.company} Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md flex-shrink-0" />
             <div class="flex-1">
                 <header class="flex flex-row justify-between items-start mb-3">
                     <div>
                         <h3 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2">${exp.role}</h3>
-                        <h4 class="text-xl font-bold text-gray-700 mt-2 mb-2">${exp.company}</h4>
+                        <h4 class="text-xl font-bold text-gray-700 mt-2 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 017.5 2h9A1.5 1.5 0 0118 3.5v9a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 016 12.5v-9zM7.5 3a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h9a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5h-9z" clip-rule="evenodd"/>
+                                <path d="M3 8.5A1.5 1.5 0 014.5 7h.5v1h-.5a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h9a.5.5 0 00.5-.5V17h1v.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 013 17.5v-9z"/>
+                            </svg>
+                            ${exp.company}
+                        </h4>
                     </div>
-                    <div class="flex flex-col items-end">
-                        <span class="text-lg font-semibold text-gray-700">${exp.location}</span>
-                        <span class="text-lg font-semibold text-gray-500 mt-1">${exp.period}</span>
+                    <div class="flex flex-col items-end gap-1">
+                        <span class="text-lg font-semibold text-gray-700 flex items-center gap-2">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            ${exp.location}
+                        </span>
+                        <span class="text-lg font-semibold text-gray-500 flex items-center gap-2">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                            ${exp.period}
+                        </span>
                     </div>
                 </header>
                 <ul class="list-disc list-outside text-gray-700 space-y-2">
