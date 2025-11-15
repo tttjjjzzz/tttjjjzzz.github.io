@@ -26,10 +26,17 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/custom.css">
 </head>
-<body class="font-sans bg-gray-50 text-gray-800 antialiased">
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- Animated Wave Background -->
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
 
     <!-- Sticky Header - FULL WIDTH -->
-    <header class="sticky top-0 z-50 w-full bg-gray-50 shadow-md">
+    <header class="sticky top-0 z-50 w-full shadow-md" style="background: rgba(249, 250, 251, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
         <!-- Changed: Removed max-w-8xl to make header truly full width, kept px-6 for internal padding -->
         <div class="w-full px-6 py-6">
             <div class="flex items-center justify-between w-full">
@@ -76,37 +83,37 @@
     </header>
 
     <!-- About Section - Full Width Background -->
-    <section id="about" class="w-full bg-gray-800 scroll-mt-64 md:scroll-mt-32">
+    <section id="about" class="w-full scroll-mt-64 md:scroll-mt-32">
         <div class="max-w-8xl mx-auto px-6 pt-20 md:pt-32 pb-16 md:pb-32">
             <main>
             <!-- About Section Content -->
             <div class="mb-32">
                 <div class="flex justify-center mb-20">
                     <div class="welcome-sign flex flex-col items-center">
-                        <svg class="w-24 h-24 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-24 h-24 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <p class="text-gray-200 text-2xl font-bold mt-3">W E L C O M E !</p>
+                        <p class="text-gray-800 text-2xl font-bold mt-3">W E L C O M E !</p>
                     </div>
                 </div>
                 <div class="mt-20">
-                    <h2 id="about-title" class="text-5xl md:text-6xl font-bold text-white text-center">Hi, I am Tiger Zhou 👋</h2>
-                    <p id="about-subtitle" class="text-2xl md:text-3xl text-gray-300 text-center mt-8">
+                    <h2 id="about-title" class="text-5xl md:text-6xl font-bold text-gray-900 text-center">Hi, I am Tiger Zhou 👋</h2>
+                    <p id="about-subtitle" class="text-2xl md:text-3xl text-gray-700 text-center mt-8">
                         An Integrated Engineering Student at UBC, Specializing in Electrical Engineering
                     </p>
                 </div>
                 <!-- Centered border element -->
-                <div class="w-24 h-1 bg-blue-300 mx-auto mt-10 mb-10"></div> 
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-10 mb-10"></div> 
                 
-                <p id="about-tagline" class="text-lg md:text-2xl text-gray-200 leading-relaxed text-center max-w-3xl mx-auto">
+                <p id="about-tagline" class="text-lg md:text-2xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
                     As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges.
                 </p>
 
-                <p id="about-expertise" class="text-lg md:text-2xl text-gray-200 leading-relaxed text-center max-w-3xl mx-auto mt-6">
+                <p id="about-expertise" class="text-lg md:text-2xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mt-6">
                     My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development
                 </p>
 
-                <p id="about-purpose" class="text-lg md:text-2xl text-gray-200 leading-relaxed text-center max-w-3xl mx-auto mt-6">
+                <p id="about-purpose" class="text-lg md:text-2xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mt-6">
                     This website aims to showcase concrete examples of my work across various engineering projects.
                     Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses.
                 </p>
@@ -119,7 +126,7 @@
 
                 <!-- Scroll Down Indicator -->
                 <div class="flex justify-center mt-48">
-                    <a href="#experience" class="scroll-indicator text-gray-400 hover:text-gray-200 transition-colors cursor-pointer">
+                    <a href="#experience" class="scroll-indicator text-gray-600 hover:text-gray-800 transition-colors cursor-pointer">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                         </svg>
@@ -133,7 +140,7 @@
 
     
     <!-- Experience Section - Full Width Background -->
-    <section id="experience" class="w-full bg-blue-50 scroll-mt-64 md:scroll-mt-32">
+    <section id="experience" class="w-full scroll-mt-64 md:scroll-mt-32">
         <div class="max-w-8xl mx-auto px-6 pt-20 md:pt-32 pb-20 md:pb-32">
             <h2 class="text-5xl font-bold text-gray-900 text-center">Professional Experience</h2>
             <!-- Centered border element -->
