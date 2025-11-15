@@ -1,0 +1,51 @@
+/* Custom Styles and Animations */
+
+/* Experience Card Gradient Animation */
+.exp-gradient-spawn {
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-gradient-spawn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    z-index: 0;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #a7c7ff 0%, #bafffa 100%);
+    opacity: 0.5;
+    transition: width 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+.exp-gradient-spawn:hover::before {
+    width: 100%;
+}
+
+.exp-gradient-spawn > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome Sign Swaying Animation */
+@keyframes sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.welcome-sign {
+    animation: sway 2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* Scroll Down Indicator Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
