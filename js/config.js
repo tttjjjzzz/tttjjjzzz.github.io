@@ -74,7 +74,21 @@ const SITE_CONFIG = {
                 "Planned and conducted design verification (power, clock, logic and status, reset, ripple and noise, and timing signals) for various embedded hardware products to ensure performance and compliance with design specifications",
                 "Gained practical experience working with CAN, RS485, SPI, USART, Ethernet (APL), and Fiber Optic protocols in embedded systems"
             ]
-        }
+        },
+        {
+            id: "consen-hw-engineer-2",
+            role: "Hardware Engineer - Intern",
+            company: "Consen Automation",
+            location: "Beijing, China",
+            period: "May 2024 – Aug 2024",
+            logo: "consen_automation_logo.jpg",
+            responsibilities: [
+                "Designed and optimized CAN bus to Fiber Optic communication module schematic and PCB using Cadence Allegro/OrCAD",
+                "Planned and conducted design verification (power, clock, logic and status, reset, ripple and noise, and timing signals) for various embedded hardware products to ensure performance and compliance with design specifications",
+                "Gained practical experience working with CAN, RS485, SPI, USART, Ethernet (APL), and Fiber Optic protocols in embedded systems"
+            ]
+        },
+        
     ],
 
     // Projects

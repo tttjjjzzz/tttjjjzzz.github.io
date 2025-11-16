@@ -339,6 +339,41 @@ body {
     }
 }
 
+/* Timeline vertical line */
+#experience-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #c4b5fd, #a78bfa, #8b5cf6);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(196, 181, 253, 0.5);
+}
+
+/* Timeline item wrapper */
+.timeline-item {
+    position: relative;
+    margin-left: 60px;
+}
+
+/* Timeline dots on wrapper (won't move with card) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -65.9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: #c4b5fd;
+    border: 3px solid rgba(196, 181, 253, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(196, 181, 253, 0.6);
+    z-index: 2;
+}
+
 /* Experience Card Gradient Animation */
 .exp-gradient-spawn {
     position: relative;
@@ -349,7 +384,7 @@ body {
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     /* smoother combined transform + shadow transition */
-    transition: transform .38s cubic-bezier(.22,.61,.36,1);
+    transition: transform .3s cubic-bezier(.22,.61,.36,1);
 }
 
 /* Animated gradient border glow */
@@ -474,7 +509,10 @@ body {
 .project-card {
     position: relative;
     overflow: hidden;
-    background: white;
+    background: rgba(243,244,246,0.05);
+    border: 2px solid transparent;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     transition: all 0.3s ease;
 }
 
@@ -500,6 +538,12 @@ body {
 .project-card > * {
     position: relative;
     z-index: 1;
+}
+
+/* Project card title with metallic purple glow */
+.project-title {
+    color: #c4b5fd !important;
+    text-shadow: 0 0 8px rgba(196, 181, 253, 0.5);
 }
 
 .project-card-content {

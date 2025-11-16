@@ -50,8 +50,9 @@ function generateSocialIcons(socialLinks, size = 'w-7 h-7') {
  */
 function generateExperienceCard(exp) {
     return `
-        <div class="exp-gradient-spawn group p-10 rounded-3xl shadow-md flex items-start gap-6 pl-10 ml-0 transition-transform duration-300 hover:scale-105">
-            <img src="${exp.logo}" alt="${exp.company} Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md flex-shrink-0" />
+        <div class="timeline-item">
+            <div class="exp-gradient-spawn group p-10 rounded-3xl shadow-md flex items-start gap-6 pl-10 hover:scale-105">
+                <img src="${exp.logo}" alt="${exp.company} Logo" class="w-20 h-20 rounded-3xl object-cover shadow-md flex-shrink-0" />
             <div class="flex-1">
                 <header class="flex flex-row justify-between items-start mb-3">
                     <div>
@@ -84,6 +85,7 @@ function generateExperienceCard(exp) {
                 </ul>
             </div>
         </div>
+        </div>
     `;
 }
 
@@ -92,18 +94,18 @@ function generateExperienceCard(exp) {
  */
 function generateProjectCard(project) {
     return `
-        <a href="${project.link}" class="project-card block py-3 px-6 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-all max-w-2xl mx-auto" style="min-height: 220px;">
+        <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 max-w-2xl mx-auto" style="min-height: 300px;">
             <div class="project-card-content">
-                <h3 class="text-xl font-bold text-gray-900">
+                <h3 class="project-title text-2xl font-bold text-gray-100">
                     ${project.title}
                 </h3>
-                <h4 class="text-md font-semibold text-gray-600 my-2">
+                <h4 class="text-md font-semibold text-gray-300 my-2">
                     Tools: ${project.tools}
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-100">
                     ${project.description}
                 </p>
-                <span class="inline-block mt-4 text-blue-600 font-medium">
+                <span class="inline-block mt-4 text-purple-300 font-medium">
                     View Project Details &rarr;
                 </span>
             </div>
