@@ -407,14 +407,33 @@ body {
     transform: translateY(-4px) scale(1.035);
 }
 
-/* Light text inside card (no color change on hover) */
-.exp-gradient-spawn h3,
-.exp-gradient-spawn h4,
-.exp-gradient-spawn span,
-.exp-gradient-spawn li,
-.exp-gradient-spawn p,
+/* Experience card text colors - adjust each independently */
+.exp-gradient-spawn h3 {
+    color: #c4b5fd !important; /* Role title - lighter metallic purple */
+    text-shadow: 0 0 8px rgba(196, 181, 253, 0.5);
+}
+
+.exp-gradient-spawn h4 {
+    color: #f3f4f6 !important; /* Company name */
+}
+
+.exp-gradient-spawn span {
+    color: #f3f4f6 !important; /* Location and period */
+}
+
+.exp-gradient-spawn li {
+    color: #f3f4f6 !important; /* Responsibility bullets */
+    font-size: 1.125rem; /* Increased bullet text size */
+}
+
 .exp-gradient-spawn ul {
-    color: #f3f4f6 !important;
+    color: #f3f4f6 !important; /* Unordered list container */
+}
+
+.exp-gradient-spawn ul li::marker {
+    font-size: 1.5rem; /* Larger bullet point marker */
+    color: #c4b5fd; /* Lighter metallic purple matching role title */
+    text-shadow: 0 0 16px rgba(196, 181, 253, 0.8);
 }
 
 /* Welcome Sign Swaying Animation */
@@ -433,9 +452,16 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
-
 .scroll-indicator {
     animation: bounce 2s infinite;
+    color: #c4b5fd;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.5));
+    transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    color: #c4b5fd;
+    filter: drop-shadow(0 0 16px rgba(167, 139, 250, 0.8));
 }
 
 /* Project Card Animated Gradient */
@@ -502,6 +528,8 @@ body {
     opacity: 1;
 }
 
+
+
 /* Animated Social Icons */
 #about-social {
   display: flex;
@@ -559,6 +587,8 @@ body {
 #about-social a:hover:before {
   top: 0;
 }
+
+
 
 /* Header text and icon color to match experience cards */
 header h1,
