@@ -101,20 +101,20 @@ function generateProjectCard(project) {
         .join('');
     
     return `
-        <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 max-w-2xl mx-auto" style="min-height: 300px;">
-            <div class="project-card-content">
-                <h3 class="project-title text-2xl font-bold text-gray-100 mb-4">
+        <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 max-w-2xl mx-auto flex flex-col" style="min-height: 300px;">
+            <div class="project-card-content flex flex-col flex-1">
+                <h3 class="project-title text-2xl font-bold text-gray-100 mb-6">
                     ${project.title}
                 </h3>
-                <p class="text-lg text-gray-100 my-3">
+                <p class="text-lg text-gray-100 mb-4">
                     ${project.description}
                 </p>
-                <div class="flex flex-wrap gap-2 my-3">
-                    ${toolBadges}
+                <div class="mt-auto">
+                    <div class="mb-5" style="height: 2px; background: #c4b5fd; box-shadow: 0 0 8px rgba(196, 181, 253, 0.5); border-radius: 9999px;"></div>
+                    <div class="flex flex-wrap gap-3">
+                        ${toolBadges}
+                    </div>
                 </div>
-                <span class="inline-block mt-4 text-purple-300 font-medium">
-                    View Project Details &rarr;
-                </span>
             </div>
             <div class="project-card-overlay">
                 <div class="text-center px-6">

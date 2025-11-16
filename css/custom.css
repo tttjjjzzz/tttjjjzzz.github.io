@@ -523,7 +523,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #a7c7ff, #bafffa, #a7c7ff, #bafffa);
+    background: linear-gradient(135deg, #e9d5ff, #a78bfa, #6d28d9, #a78bfa);
     background-size: 300% 300%;
     opacity: 0;
     z-index: 0;
@@ -532,7 +532,7 @@ body {
 }
 
 .project-card:hover::before {
-    opacity: 0.85; /* static gradient, no sliding fill */
+    opacity: 0.8; /* static gradient, no sliding fill */
 }
 
 .project-card > * {
@@ -551,8 +551,7 @@ body {
     display: inline-block;
     padding: 0.375rem 0.875rem;
     background: rgba(196, 181, 253, 0.15);
-    border: 1px solid rgba(196, 181, 253, 0.3);
-    border-radius: 12px;
+    border-radius: 8px;
     color: #c4b5fd;
     font-size: 1rem;
     font-weight: 600;
