@@ -93,18 +93,25 @@ function generateExperienceCard(exp) {
  * Generate project card
  */
 function generateProjectCard(project) {
+    // Split tools by comma and create badge elements
+    const toolBadges = project.tools
+        .split(',')
+        .map(tool => tool.trim())
+        .map(tool => `<span class="tool-badge">${tool}</span>`)
+        .join('');
+    
     return `
         <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 max-w-2xl mx-auto" style="min-height: 300px;">
             <div class="project-card-content">
-                <h3 class="project-title text-2xl font-bold text-gray-100">
+                <h3 class="project-title text-2xl font-bold text-gray-100 mb-4">
                     ${project.title}
                 </h3>
-                <h4 class="text-md font-semibold text-gray-300 my-2">
-                    Tools: ${project.tools}
-                </h4>
-                <p class="text-gray-100">
+                <p class="text-lg text-gray-100 my-3">
                     ${project.description}
                 </p>
+                <div class="flex flex-wrap gap-2 my-3">
+                    ${toolBadges}
+                </div>
                 <span class="inline-block mt-4 text-purple-300 font-medium">
                     View Project Details &rarr;
                 </span>

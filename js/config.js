@@ -97,7 +97,7 @@ const SITE_CONFIG = {
             id: "robotic-arm",
             title: "3-Axis Robotic Arm",
             tools: "SolidWorks, Arduino, Python",
-            description: "Designed and built a 3-axis robotic arm using 3D-printed parts and an Arduino controller.",
+            description: "Designed and built a 3-axis robotic arm using 3D-printed parts and an Arduino controller. ",
             link: "project-one.html"
         },
         {

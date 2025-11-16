@@ -513,7 +513,7 @@ body {
     border: 2px solid transparent;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-    transition: transform .3s cubic-bezier(.22,.61,.36,1);
+    transition: all 0.3s ease;
 }
 
 .project-card::before {
@@ -544,6 +544,20 @@ body {
 .project-title {
     color: #c4b5fd !important;
     text-shadow: 0 0 8px rgba(196, 181, 253, 0.5);
+}
+
+/* Tool badges */
+.tool-badge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    background: rgba(196, 181, 253, 0.15);
+    border: 1px solid rgba(196, 181, 253, 0.3);
+    border-radius: 12px;
+    color: #c4b5fd;
+    font-size: 1rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .project-card-content {
