@@ -151,7 +151,7 @@ function generateAboutSection() {
             <!-- Centered border element -->
             <div class="w-24 h-1 bg-gray-100 mx-auto mt-10 mb-10"></div> 
             
-            ${about.paragraphs.map(p => `
+            ${about.paragraphs.map((p) => `
                 <p class="text-lg md:text-2xl text-gray-100 leading-relaxed text-center max-w-3xl mx-auto mt-6">
                     ${p}
                 </p>

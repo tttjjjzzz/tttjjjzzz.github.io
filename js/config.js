@@ -5,7 +5,7 @@ const SITE_CONFIG = {
         name: "TJJZ",
         fullName: "Tiger Zhou",
         title: "An Integrated Engineering Student at UBC, Specializing in Electrical Engineering",
-        tagline: "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges.",
+        tagline: "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges. ",
         expertise: "My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development",
         websitePurpose: "This website aims to showcase concrete examples of my work across various engineering projects. Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses."
     },
@@ -21,7 +21,7 @@ const SITE_CONFIG = {
     // Social Media Links
     social: {
         github: "https://github.com/tttjjjzzz",
-        linkedin: "#", // Update with real LinkedIn URL
+        linkedin: "https://www.linkedin.com/in/tiger-zhou-746893257/", // Update with real LinkedIn URL
         email: "jzhou345@outlook.com"
     },
     
@@ -32,6 +32,7 @@ const SITE_CONFIG = {
         subtitle: 'An Integrated Engineering Student at UBC, Specializing in Electrical Engineering',
         paragraphs: [
             "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges.",
+            "While I am eager to explore various fields in the industry, I am most drawn to the robotics and embedded systems sector",
             "My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development",
             "This website aims to showcase concrete examples of my work across various engineering projects. Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses."
         ]
@@ -72,9 +73,9 @@ const SITE_CONFIG = {
     // Navigation Items
     navigation: [
         { name: "About", href: "#about" },
-        { name: "Resume", href: "#resume" },
         { name: "Experience", href: "#experience" },
         { name: "Projects", href: "#projects" },
+        { name: "Resume", href: "#resume" },
         { name: "Contact", href: "#contact" }
     ],
 
