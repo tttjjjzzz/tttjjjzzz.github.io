@@ -499,18 +499,23 @@ header button:hover {
     }
     
     /* Adjust experience card layout for mobile */
+    
+    /* Hide timeline line and dots on mobile */
+    #experience-container::before {
+        display: none !important;
+    }
+    
     .timeline-item {
-        margin-left: 40px;
+        margin-left: 0 !important;
     }
     
     .timeline-item::before {
-        left: -45.9px;
-        width: 12px;
-        height: 12px;
+        display: none !important;
     }
     
     .exp-gradient-spawn {
         padding: 1.5rem !important;
+        padding-left: 1rem !important;
     }
     
     .exp-gradient-spawn img {
@@ -530,9 +535,9 @@ header button:hover {
         margin-top: 0.5rem;
     }
     
-    /* Keep bullet points with proper spacing */
+    /* Reduce left padding for description bullets */
     .exp-gradient-spawn ul {
-        padding-left: 1.5rem !important;
+        padding-left: 1rem !important;
         margin-left: 0 !important;
     }
     
