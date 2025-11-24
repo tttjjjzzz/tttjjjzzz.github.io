@@ -460,7 +460,7 @@ class Gradient {
     e(this, "activeColors", [1, 1, 1, 1]);
     e(this, "resize", () => {
       // Fixed size - no longer responsive to screen size
-      this.width = 1920;
+      this.width = 2560;
       this.height = 1080;
       this.minigl.setSize(this.width, this.height);
       this.minigl.setOrthographicCamera();
