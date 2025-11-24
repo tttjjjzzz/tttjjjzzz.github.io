@@ -180,7 +180,7 @@ function generateAboutSection() {
 function generateResumeSection() {
     const resume = SITE_CONFIG.resume;
     return `
-        <div class="max-w-5xl mx-auto mb-12">
+        <div class="max-w-4xl mx-auto mb-12">
             <div class="exp-gradient-spawn p-12 rounded-3xl" style="background: rgba(196, 181, 253, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
                 <div class="space-y-8">
                     <!-- Row 1: Education and Location -->
@@ -269,7 +269,7 @@ function generateResumeSection() {
 function generateContactSection() {
     const contact = SITE_CONFIG.contact;
     return `
-        <h2 class="text-4xl font-bold text-gray-100 text-center">${contact.heading}</h2>
+        <h2 class="text-5xl font-bold text-gray-100 text-center">${contact.heading}</h2>
         <!-- Centered border element -->
         <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
 
@@ -278,7 +278,7 @@ function generateContactSection() {
         </p>
         <!-- Centered button -->
         <div class="text-center">
-            <a href="mailto:${SITE_CONFIG.social.email}" class="inline-block bg-blue-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+            <a href="mailto:${SITE_CONFIG.social.email}" class="inline-block px-8 py-4 rounded-2xl font-bold text-xl transition-all" style="background: rgba(196, 181, 253, 0.15); color: #c4b5fd; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); text-shadow: 0 0 8px rgba(196, 181, 253, 0.3);">
                 ${contact.buttonText}
             </a>
         </div>
