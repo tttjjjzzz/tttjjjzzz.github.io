@@ -519,17 +519,15 @@ header button:hover {
     }
     
     /* Stack headings vertically on mobile */
-    .exp-gradient-spawn header {
+    .exp-gradient-spawn header.flex {
         flex-direction: column !important;
         align-items: flex-start !important;
-    }
-    
-    .exp-gradient-spawn header > div {
-        width: 100%;
+        gap: 0.75rem !important;
     }
     
     .exp-gradient-spawn header .flex-col {
         align-items: flex-start !important;
+        margin-top: 0.5rem;
     }
     
     /* Keep bullet points with proper spacing */
