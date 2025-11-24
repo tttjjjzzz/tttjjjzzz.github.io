@@ -269,18 +269,16 @@ function generateResumeSection() {
 function generateContactSection() {
     const contact = SITE_CONFIG.contact;
     return `
-        <h2 class="text-5xl font-bold text-gray-100 text-center">${contact.heading}</h2>
+        <h2 class="text-7xl font-bold text-gray-100 text-center">${contact.heading}</h2>
         <!-- Centered border element -->
-        <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-8"></div>
+        <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-16"></div>
 
-        <p class="text-lg text-gray-100 leading-relaxed mb-6 text-center">
+        <p class="text-3xl text-gray-100 leading-relaxed mb-6 text-center">
             ${contact.description}
         </p>
-        <!-- Centered button -->
-        <div class="text-center">
-            <a href="mailto:${SITE_CONFIG.social.email}" class="inline-block px-8 py-4 rounded-2xl font-bold text-xl transition-all" style="background: rgba(196, 181, 253, 0.15); color: #c4b5fd; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); text-shadow: 0 0 8px rgba(196, 181, 253, 0.3);">
-                ${contact.buttonText}
-            </a>
+        <!-- Social Icons -->
+        <div id="contact-social" class="flex justify-center items-center gap-x-8 mt-20">
+            ${generateSocialIcons(SITE_CONFIG.social, 'w-9 h-9')}
         </div>
     `;
 }

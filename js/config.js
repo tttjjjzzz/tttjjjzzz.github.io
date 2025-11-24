@@ -65,9 +65,8 @@ const SITE_CONFIG = {
     
     // Contact Section Content
     contact: {
-        heading: 'Get In Touch',
-        description: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to send me an email!",
-        buttonText: 'Send me an email'
+        heading: 'Lets Work Together!',
+        description: "I'm always open to discussing new projects, innovative ideas, or opportunities. Let's Connect."
     },
 
     // Navigation Items
