@@ -459,16 +459,16 @@ class Gradient {
     e(this, "freqY", 29e-5);
     e(this, "activeColors", [1, 1, 1, 1]);
     e(this, "resize", () => {
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
+      // Fixed size - no longer responsive to screen size
+      this.width = 1920;
+      this.height = 1080;
       this.minigl.setSize(this.width, this.height);
       this.minigl.setOrthographicCamera();
       this.xSegCount = Math.ceil(this.width * this.conf.density[0]);
       this.ySegCount = Math.ceil(this.height * this.conf.density[1]);
       this.mesh.geometry.setTopology(this.xSegCount, this.ySegCount);
       this.mesh.geometry.setSize(this.width, this.height);
-      this.mesh.material.uniforms.u_shadow_power.value =
-        this.width < 600 ? 5 : 6;
+      this.mesh.material.uniforms.u_shadow_power.value = 6;
     });
     e(this, "animate", (e) => {
       if (!this.shouldSkipFrame(e)) {
