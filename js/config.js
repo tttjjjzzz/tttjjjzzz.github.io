@@ -22,7 +22,52 @@ const SITE_CONFIG = {
     social: {
         github: "https://github.com/tttjjjzzz",
         linkedin: "#", // Update with real LinkedIn URL
-        email: "your-email@example.com" // Update with real email
+        email: "jzhou345@outlook.com"
+    },
+    
+    // About Section Content
+    about: {
+        welcome: 'W E L C O M E !',
+        greeting: 'Hi, I am Tiger Zhou 👋',
+        subtitle: 'An Integrated Engineering Student at UBC, Specializing in Electrical Engineering',
+        paragraphs: [
+            "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges.",
+            "My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development",
+            "This website aims to showcase concrete examples of my work across various engineering projects. Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses."
+        ]
+    },
+    
+    // Resume Section Content
+    resume: {
+        education: {
+            university: 'University of British Columbia',
+            program: 'Integrated Engineering (Electrical & Computer)',
+            graduation: 'Expected 2027'
+        },
+        location: {
+            lines: [
+                'Vancouver, British Columbia, Canada',
+                'Beijing, China'
+            ]
+        },
+        contact: {
+            email: 'jzhou345@outlook.com',
+            phones: [
+                { country: 'CA', number: '+1 (778) 389 1124' },
+                { country: 'CN', number: '+86 183 1117 9925' }
+            ]
+        },
+        links: [
+            { name: 'GitHub', url: 'https://github.com/tttjjjzzz', icon: 'github' },
+            { name: 'LinkedIn', url: '#', icon: 'linkedin' }
+        ]
+    },
+    
+    // Contact Section Content
+    contact: {
+        heading: 'Get In Touch',
+        description: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to send me an email!",
+        buttonText: 'Send me an email'
     },
 
     // Navigation Items
