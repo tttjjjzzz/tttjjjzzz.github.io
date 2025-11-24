@@ -510,13 +510,32 @@ header button:hover {
     }
     
     .exp-gradient-spawn {
-        flex-direction: column !important;
         padding: 1.5rem !important;
     }
     
     .exp-gradient-spawn img {
         width: 60px !important;
         height: 60px !important;
+    }
+    
+    /* Stack headings vertically on mobile */
+    .exp-gradient-spawn header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .exp-gradient-spawn header > div {
+        width: 100%;
+    }
+    
+    .exp-gradient-spawn header .flex-col {
+        align-items: flex-start !important;
+    }
+    
+    /* Keep bullet points with proper spacing */
+    .exp-gradient-spawn ul {
+        padding-left: 1.5rem !important;
+        margin-left: 0 !important;
     }
     
     /* Stack resume grid items on mobile */
