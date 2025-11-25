@@ -27,7 +27,7 @@ const SITE_CONFIG = {
     
     // About Section Content
     about: {
-        welcome: 'W E L C O M E !',
+        welcome: 'pennys',
         greeting: 'Hi, I am Tiger Zhou 👋',
         subtitle: 'An Integrated Engineering Student at UBC, Specializing in Electrical Engineering',
         paragraphs: [
