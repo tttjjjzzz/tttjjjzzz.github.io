@@ -101,7 +101,7 @@ function generateProjectCard(project) {
         .join('');
     
     return `
-        <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 max-w-2xl mx-auto flex flex-col" style="min-height: 300px;">
+        <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 flex flex-col h-full" style="min-height: 300px;">
             <div class="project-card-content flex flex-col flex-1">
                 <h3 class="project-title text-2xl font-bold text-gray-100 mb-6">
                     ${project.title}

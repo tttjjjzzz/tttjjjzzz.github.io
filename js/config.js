@@ -119,52 +119,46 @@ const SITE_CONFIG = {
                 "Planned and conducted design verification (power, clock, logic and status, reset, ripple and noise, and timing signals) for various embedded hardware products to ensure performance and compliance with design specifications",
                 "Gained practical experience working with CAN, RS485, SPI, USART, Ethernet (APL), and Fiber Optic protocols in embedded systems"
             ]
-        },
-        {
-            id: "consen-hw-engineer-2",
-            role: "Hardware Engineer - Intern",
-            company: "Consen Automation",
-            location: "Beijing, China",
-            period: "May 2024 – Aug 2024",
-            logo: "consen_automation_logo.jpg",
-            responsibilities: [
-                "Designed and optimized CAN bus to Fiber Optic communication module schematic and PCB using Cadence Allegro/OrCAD",
-                "Planned and conducted design verification (power, clock, logic and status, reset, ripple and noise, and timing signals) for various embedded hardware products to ensure performance and compliance with design specifications",
-                "Gained practical experience working with CAN, RS485, SPI, USART, Ethernet (APL), and Fiber Optic protocols in embedded systems"
-            ]
-        },
+        }
         
     ],
 
     // Projects
     projects: [
         {
-            id: "robotic-arm",
-            title: "3-Axis Robotic Arm",
-            tools: "SolidWorks, Arduino, Python,dwdwadaw,dwa,dwa,dw",
-            description: "Designed and built a 3-axis robotic arm using 3D-printed parts and an Arduino controller. ",
-            link: "project-one.html"
+            id: "can-fiber-module",
+            title: "CAN Bus to Fibre Optic Conversion Module",
+            tools: "Cadence Allegro, OrCAD, Circuit Design, PCB Design, CAN Protocol",
+            description: "Using Cadence software, collaborated on circuit and PCB design based on the design specifications, and conducted hardware verifiction to optimize PCB.",
+            link: "project-can-fiber.html"
         },
         {
-            id: "water-filtration",
-            title: "Water Filtration Analysis",
-            tools: "MATLAB, Simulink",
-            description: "Modeled a closed-loop geothermal heating system using Python to analyze thermal efficiency.",
-            link: "project-two.html"
+            id: "comm-verification",
+            title: "Communication Module Verification Procedures",
+            tools: "Oscilloscope, Logic Analyzer, SMD/THT Soldering, Cadence Allegro, OrCad",
+            description: "Designed and conducted hardware verification procedures based on parametric specifications to test power, clock, logic and status, reset, ripple and noise, and timing signals on various communication PCB modules.",
+            link: "project-comm-verification.html"
         },
         {
-            id: "robotic-arm-2",
-            title: "3-Axis Robotic Arm",
-            tools: "SolidWorks, Arduino, Python",
-            description: "Designed and built a 3-axis robotic arm using 3D-printed parts and an Arduino controller.",
-            link: "project-one.html"
+            id: "stirling-fridge",
+            title: "Stirling Refrigerator for Vaccine Storage",
+            tools: "Altium Designer, Circuit Design, PCB Design, ESP-32, C++,Python Scripting, Sensor Integration, LabJack, SMD/THT Soldering",
+            description: "Designed, configured, and implemented multiple hardware and software/firmware components for a Stirling Refridgeration system. Enter this page to view all project components.",
+            link: "project-stirling-fridge.html"
         },
         {
-            id: "water-filtration-2",
-            title: "Water Filtration Analysis",
-            tools: "MATLAB, Simulink",
-            description: "Modeled a closed-loop geothermal heating system using Python to analyze thermal efficiency.",
-            link: "project-two.html"
+            id: "bt-segway-robot",
+            title: "Bluetooth-Controlled Segway Robot",
+            tools: "KiCad, Circuit Design, PCB Design, STM32, Bluetooh 2.0, C, FreeRTOS",
+            description: "Designing custom STM32-based PCB hardware and firmware for bluetooth-controlled SegWay robot, also with the goal of building foundational components to support future additions, such as obstacle detection and autonomous driving.",
+            link: "project-bt-segway.html"
+        },
+        {
+            id: "can-2b-module",
+            title: "CAN 2.0B Module",
+            tools: "Altium Designer, Circuit Design, PCB Design, CAN Protocol",
+            description: "Developed CAN 2.0B Module designed to interface with and test SPI to CAN communication migration for various motor drivers and a RaspberryPi Computer.",
+            link: "project-can-2b.html"
         }
     ],
 
