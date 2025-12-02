@@ -126,14 +126,15 @@
                                 <!--ringing stuff-->
                                 <p class="text-lg text-gray-300 mb-6">To control ringing effects at the mosfet gate, I needed to implement a gate resistor, placed as close to the gate as possible. I tested different resistances and chose the most optimal value based on the measured gate driver output signals.</p>
                                 <!--ringing images-->
-                                <div class="flex flex-col md:flex-row gap-6 mb-12 mt-8 w-full">
-                                    <div class="flex flex-col items-center w-full md:w-1/2">
-                                        <img src="../photos/project-stirling-fridge/ringing0Ohm.png" alt="I2C Compliance testing" class="rounded-lg shadow-lg mb-2 w-full h-64 md:h-96 object-cover">
-                                        <p class="text-base text-gray-200 text-center">0Ω gate resistance</p>
+                                <!-- Images Section -->
+                                <div class="flex flex-col md:flex-row gap-6 mb-12 mt-8 w-full justify-center md:items-start">
+                                    <div class="flex flex-col items-center w-full md:flex-1 md:max-w-sm">
+                                        <img src="../photos/project-stirling-fridge/ringing0Ohm.png" alt="I2C Compliance testing" class="rounded-lg shadow-lg mb-2 w-full h-auto md:h-80 md:w-auto md:object-contain">
+                                        <p class="text-base text-gray-200 text-center">0Ω Gate Resistor</p>
                                     </div>
-                                    <div class="flex flex-col items-center w-full md:w-1/2">
-                                        <img src="../photos/project-stirling-fridge/ringing15Ohm.png" alt="Soft-power up timing testing" class="rounded-lg shadow-lg mb-2 w-full h-64 md:h-96 object-cover">
-                                        <p class="text-base text-gray-200 text-center">15Ω gate resistance</p>
+                                    <div class="flex flex-col items-center w-full md:flex-1 md:max-w-sm">
+                                        <img src="../photos/project-stirling-fridge/ringing15Ohm.png" alt="Soft-power up timing testing" class="rounded-lg shadow-lg mb-2 w-full h-auto md:h-80 md:w-auto md:object-contain">
+                                        <p class="text-base text-gray-200 text-center">15Ω Gate Resistor</p>
                                     </div>
                                 </div>
                                 <!--md diagram image-->
@@ -143,37 +144,30 @@
                                     <p class="text-lg text-gray-300 mb-6">The refridgeration mechanism is controlled by single MOSFET in a low-side driving configuration for unidirectional brushed DC motor speed control, chosen for its simplicity and because it fully meets the requirements of our application.</p>
                                 </div>
                             </div>
+
+                            <!--Thermistor Calibration Board-->
                             <div class="mb-20">   
                                 <!--description-->
-                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">Automated Thermistor Calibration Setup</h3>
-                                <p class="text-lg text-gray-300 mb-6">This board is used to amplify a PWM signal from 3V3 to 12V (fed into a low-side mosfet gate), and it also functions as a DC voltage regulation device. The generated 12V and 3V3 voltage rails are also used to supply different off-board electronic components (MCU, sensors, and display).</p>
-                                <p class="text-lg text-gray-300 mb-6">The gate driver and voltage regulation functions are integrated onto the same board due to space constraints.</p>
-                                <!-- schematic and pcb images -->
-                                <div class="mb-12 mt-8">
-                                    <img src="../photos/project-stirling-fridge/pcbSchematic.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
-                                    <p class="text-base text-gray-200 text-center mb-8">Schematic</p>
-                                    <img src="../photos/project-stirling-fridge/pcbOnChassis.png" alt="Module Interface Overview" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
-                                    <p class="text-base text-gray-200 text-center">PCBA Mounted on Chassis</p>
+                                <div class="mb-8">
+                                    <h3 class="text-2xl font-semibold text-purple-300 mb-4">Automated Thermistor Calibration Setup</h3>
+                                    <p class="text-lg text-gray-300 mb-4">With a small temperature range and high accuracy demands, the system’s temperature sensors (NTC thermistors) must be calibrated and customly-fit to the 2–8 °C range. This is done by collecting thermistor resistance and environment temperature data (measured using a digital temperature sensor), plotting these data points, then fitting a 4th order polynomial to characterize the thermistor. The calibration method provides a more accurate temperature–resistance profile than using the thermistor Beta value with the Beta equation.</p>
+                                    <p class="text-lg text-gray-300 mb-4">To ensure high calibration accuracy, many data points are collected over the sampling period (determined by magnitude of environment temperature change and rate of temperature change).</p>
                                 </div>
-                                <!--ringing stuff-->
-                                <p class="text-lg text-gray-300 mb-6">To control ringing effects at the mosfet gate, I needed to implement a gate resistor, placed as close to the gate as possible. I tested different resistances and chose the most optimal value based on the measured gate driver output signals.</p>
-                                <!--ringing images-->
-                                <div class="flex flex-row gap-6 mb-12 mt-8 w-full">
-                                    <div class="flex flex-col items-center w-1/2">
-                                        <img src="../photos/project-stirling-fridge/ringing0Ohm.png" alt="I2C Compliance testing" class="rounded-lg shadow-lg mb-2 w-full h-96 object-cover">
-                                        <p class="text-base text-gray-200 text-center">0Ω gate resistance</p>
-                                    </div>
-                                    <div class="flex flex-col items-center w-1/2">
-                                        <img src="../photos/project-stirling-fridge/ringing15Ohm.png" alt="Soft-power up timing testing" class="rounded-lg shadow-lg mb-2 w-full h-96 object-cover">
-                                        <p class="text-base text-gray-200 text-center">15Ω gate resistance</p>
-                                    </div>
+                                <!--Setup Overview-->
+                                <div>
+                                    <h4 class="text-xl text-purple-300 mb-4">Setup Overview</h3>
+                                    <p class="text-lg text-gray-300 mb-2">This setup uses the following hardware components:</p>
+                                    <!--for a list-->
+                                    <ul class="list-disc list-inside text-lg text-gray-300 mb-6 ml-4">
+                                        <li>Adafruit TMP117 Module (digital temperature sensor)</li>
+                                        <li>ESP32 Dev Module</li>
+                                        <li>ADC Multiplexer</li>
+                                        <li>10k NTC thermistors (for this example)</li>
+                                        <li>10k Resistors</li>
                                 </div>
-                                <!--md diagram image-->
-                                <div class="mb-12 mt-8">
-                                    <img src="../photos/project-stirling-fridge/mdHighLevel.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
-                                    <p class="text-base text-gray-200 text-center mb-8">Motor Driver Circuit, high-level diagram:</p>
-                                    <p class="text-lg text-gray-300 mb-6">The refridgeration mechanism is controlled by single MOSFET in a low-side driving configuration for unidirectional brushed DC motor speed control, chosen for its simplicity and because it fully meets the requirements of our application.</p>
-                                </div>
+
+
+                                
                             </div>
             
                         </div>
