@@ -148,23 +148,42 @@
                             <!--Thermistor Calibration Board-->
                             <div class="mb-20">   
                                 <!--description-->
-                                <div class="mb-8">
+                                <div class="mb-10">
                                     <h3 class="text-2xl font-semibold text-purple-300 mb-4">Automated Thermistor Calibration Setup</h3>
                                     <p class="text-lg text-gray-300 mb-4">With a small temperature range and high accuracy demands, the system’s temperature sensors (NTC thermistors) must be calibrated and customly-fit to the 2–8 °C range. This is done by collecting thermistor resistance and environment temperature data (measured using a digital temperature sensor), plotting these data points, then fitting a 4th order polynomial to characterize the thermistor. The calibration method provides a more accurate temperature–resistance profile than using the thermistor Beta value with the Beta equation.</p>
                                     <p class="text-lg text-gray-300 mb-4">To ensure high calibration accuracy, many data points are collected over the sampling period (determined by magnitude of environment temperature change and rate of temperature change).</p>
                                 </div>
                                 <!--Setup Overview-->
-                                <div>
+                                <div class="mb-10">
                                     <h4 class="text-xl text-purple-300 mb-4">Setup Overview</h3>
                                     <p class="text-lg text-gray-300 mb-2">This setup uses the following hardware components:</p>
                                     <!--for a list-->
-                                    <ul class="list-disc list-inside text-lg text-gray-300 mb-6 ml-4">
+                                    <ul class="list-disc list-inside text-lg text-gray-300 mb-8 ml-4">
                                         <li>Adafruit TMP117 Module (digital temperature sensor)</li>
                                         <li>ESP32 Dev Module</li>
                                         <li>ADC Multiplexer</li>
                                         <li>10k NTC thermistors (for this example)</li>
                                         <li>10k Resistors</li>
+                                    </ul>
+                                    <img src="../photos/project-stirling-fridge/thermistorSetup.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
+                                    <p class="text-base text-gray-200 text-center mb-8">Setup Diagram - Thermistors in voltage divider configuration</p>
                                 </div>
+                                <!--functional description-->
+                                <div class="mb-20">
+                                    <h4 class="text-xl text-purple-300 mb-4">Functional Description</h3>
+                                    <!--for a list-->
+                                    <ul class="list-disc text-lg text-gray-300 mb-8 ml-4 space-y-2">
+                                        <li class="pl-2">As the environment temperature slowly changes from A to B, the thermistors and TMP117 temperatures slowly adjust. Throughout this process, at a predetermined sampling period, the thermistor’s resistance is calculated with the measured voltage through the ADC MUX and the MCU’s onboard ADC channels, and the environment temperature is measured using the TMP117 and relayed to the MCU through I2C.</li>
+                                        <li class="pl-2">The ADC MUX allows the number of thermistors to exceed the number of onboard ADC channels, eliminating hardware resource constraints.</li>
+                                        <li class="pl-2">Each ADC MUX channel/onboard ADC channel measures a single thermistor. Therefore, depending on hardware setup, a single calibration process can scale up to numerous thermistors, only constrained by the number of ADC channels available, saving time.</li>
+                                        <li class="pl-2">The thermistor profiling is achieved using the MCU’s onboard firmware and separate Python scripts. This workflow is detailed below: </li>
+                                    </ul>
+                                    <img src="../photos/project-stirling-fridge/thermistorWorkflow.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover mx-auto">
+                                    <p class="text-base text-gray-200 text-center mb-8">Setup Diagram - Thermistors in voltage divider configuration</p>
+                                </div>
+
+
+
 
 
                                 
