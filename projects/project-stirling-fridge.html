@@ -221,15 +221,15 @@
                                     <p class="text-base text-gray-200 text-center mb-8">Two SPTD25-20-0500H units mounted to monitor piston conditions</p>
                                 </div>
 
-                                <!--Pressure Transducer-->
+                                <!--RPM and Crank Angle Measurement: Rotary Encoder and Hall Sensor-->
                                 <div class="mb-10">
                                     <!--description-->
                                     <h4 class="text-xl text-purple-300 mb-4">RPM and Crank Angle Measurement: Rotary Encoder and Hall Sensor</h3>
                                     <p class="text-lg text-gray-300 mb-8">To measure RPM and crank angle for evaluating system performance, the system uses a 3-pin A3144 Hall-Effect sensor to mark the “0 degrees” position and a 600 P/R AB two-phase rotary encoder for intermediate angles. The system calculates RPM using the angular velocity measured between each position.</p>
                                     <!--for a list-->
 
-
-                                    <div class="flex flex-col md:flex-row gap-6 mb-12 mt-8 w-full justify-center md:items-end">
+                                    <!--images-->
+                                    <div class="flex flex-col md:flex-row gap-6 mb-8 mt-8 w-full justify-center md:items-end">
                                         <div class="flex flex-col items-center w-full md:w-auto">
                                             <img src="../photos/project-stirling-fridge/hallEffectMounted.png" alt="I2C Compliance testing" class="rounded-lg shadow-lg mb-2 w-full md:w-auto h-auto">
                                             <p class="text-base text-gray-200 text-center">Hall Sensor on chassis, magnet on crankshaft</p>
@@ -243,10 +243,34 @@
                                             <p class="text-base text-gray-200 text-center">600 P/R AB 2-phase Rotary Encoder</p>
                                         </div>
                                     </div>
-
-
-
                                     
+                                    <!--descrioptiojn-->
+                                    <p class="text-lg text-gray-300 mb-8">While the Hall-Effect sensor is powered by 3V3 (as it is 3V3 tolerant), the rotary encoder is powered by the 12V line (as it accepts a 5-24V range). Both voltage supplies are sourced from the voltage regulation PCB.</p>
+
+                                </div>
+
+
+                                <!--Temparture Measurement-->
+                                <div class="mb-10">
+                                    <!--description-->
+                                    <h4 class="text-xl text-purple-300 mb-4">Temperature Measurement: 10k NTC thermistors</h3>
+                                    <p class="text-lg text-gray-300 mb-8">The thermistors measure the storage compartment temperature, where they follow the exact setup as the automated thermistor calibration setup. By calculating their resistances using through the voltage divider output voltage, I can find the temperature using the predetermined temperature-resistance characteristic curve found using the thermistor calibration setup.</p>
+                                    <!--for a list-->
+                                    
+                                    <!--images-->
+                                    <div class="flex flex-col md:flex-row gap-6 mb-8 mt-8 w-full justify-center md:items-end">
+                                        <div class="flex flex-col items-center w-full md:w-auto">
+                                            <img src="../photos/project-stirling-fridge/thermistorEquation.png" alt="I2C Compliance testing" class="rounded-lg shadow-lg mb-2 w-full md:w-auto h-auto">
+                                            <p class="text-base text-gray-200 text-center">Thermistor resistance equation; Rb: known resistance (10k), Vcc: input voltage, Vout: measured output voltage</p>
+                                        </div>
+                                        <div class="flex flex-col items-center w-full md:w-auto">
+                                            <img src="../photos/project-stirling-fridge/scriptOutput.png" alt="Soft-power up timing testing" class="rounded-lg shadow-lg mb-2 w-full md:w-auto h-auto">
+                                            <p class="text-base text-gray-200 text-center">Example calibration script output: 4th-order polynomial coefficients</p>
+                                        </div>
+                                    </div>
+                                  
+                                    
+
                                 </div>
                                
                             </div>
