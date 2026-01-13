@@ -179,13 +179,13 @@
                                         <li class="pl-2">The thermistor profiling is achieved using the MCU’s onboard firmware and separate Python scripts. This workflow is detailed below: </li>
                                     </ul>
                                     <img src="../photos/project-stirling-fridge/thermistorWorkflow.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover mx-auto">
-                                    <p class="text-base text-gray-200 text-center mb-8">Setup Diagram - Thermistors in voltage divider configuration</p>
+                                    <p class="text-base text-gray-200 text-center mb-8">Thermistor calibration workflow</p>
                                     <p class="text-lg text-gray-300 mb-2">After the data collection period, the Python scripts automatically organize the data points, generate respective temperature curves, and profile each thermistor with custom 4th-order polynomial characteristic equations.</p>
                                 </div>
                             </div>
 
 
-                            <!--Thermistor Calibration Board-->
+                            <!--Sensor Integration-->
                             <div class="mb-20">   
                                 <!--description-->
                                 <div class="mb-10">
@@ -194,13 +194,59 @@
                                     <p class="text-lg text-gray-300 mb-4">Collected data was used to characterize performance (such as theoretical efficiency) and provide control feedback.</p>
                                 </div>
 
-                                <div class="mb-10">
+                                <!--Pressure Transducer-->
+                                <div class="mb-20">
                                     <h4 class="text-xl text-purple-300 mb-4">Pressure Measurement: Pressure Transducers</h3>
-                                    <p class="text-lg text-gray-300 mb-2">ddd The system uses two SPTD25-20-0500H pressure transducers to measure the gauge pressure for each piston. With a two-wire interface, the PTs (pressure transducers) output between 4-20mA of current that is proportional to the gauge pressure in the 0-500 psig linear region.</p>
+                                    <p class="text-lg text-gray-300 mb-8">ddd The system uses two SPTD25-20-0500H pressure transducers to measure the gauge pressure for each piston. With a two-wire interface, the PTs (pressure transducers) output between 4-20mA of current that is proportional to the gauge pressure in the 0-500 psig linear region.</p>
                                     <!--for a list-->
                                     
-                                    <img src="../photos/project-stirling-fridge/thermistorSetup.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
-                                    <p class="text-base text-gray-200 text-center mb-8">Setup Diagram - Thermistors in voltage divider configuration</p>
+                                    <!--wiring diagram-->
+                                    <img src="../photos/project-stirling-fridge/ptWiring.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
+                                    <p class="text-base text-gray-200 text-center mb-8">SPTF25-2-0500H Pressure Transducer wiring diagram</p>
+                                    
+                                    <!--explanations-->
+                                    <p class="text-lg text-gray-300 mb-4">The load impedance uses a 150 ohm load resistor (based on datasheet calculations) in series with each PT. This is then connected to a 12V source, supplied by the voltage regulation PCB.</p>
+                                    <p class="text-lg text-gray-300 mb-8">The LabJack T7's ADC channels are used to measure the voltage across the load resistors. Thereafter, each current value is calculated and converted to a gauge pressure value (psi):</p>
+                                    
+                                    <!--equations-->
+                                    <img src="../photos/project-stirling-fridge/ptEquations.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
+                                    <p class="text-base text-gray-200 text-center mb-8">Current and Gauge Pressure Equations</p>
+
+                                    <p class="text-lg text-gray-300 mb-8">Where the gauge pressure equation is derived from the PTs' current-pressure profile (Final Value Measuring Range = 500 psig, for the SPTF25-2-0500H):</p>
+
+                                    <img src="../photos/project-stirling-fridge/ptCurrentPressureProfile.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
+                                    <p class="text-base text-gray-200 text-center mb-8">Current-Pressure Profile</p>
+
+                                    <img src="../photos/project-stirling-fridge/ptMounted.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-3/4 object-cover mx-auto">
+                                    <p class="text-base text-gray-200 text-center mb-8">Two SPTD25-20-0500H units mounted to monitor piston conditions</p>
+                                </div>
+
+                                <!--Pressure Transducer-->
+                                <div class="mb-10">
+                                    <!--description-->
+                                    <h4 class="text-xl text-purple-300 mb-4">RPM and Crank Angle Measurement: Rotary Encoder and Hall Sensor</h3>
+                                    <p class="text-lg text-gray-300 mb-8">To measure RPM and crank angle for evaluating system performance, the system uses a 3-pin A3144 Hall-Effect sensor to mark the “0 degrees” position and a 600 P/R AB two-phase rotary encoder for intermediate angles. The system calculates RPM using the angular velocity measured between each position.</p>
+                                    <!--for a list-->
+
+
+                                    <div class="flex flex-col md:flex-row gap-6 mb-12 mt-8 w-full justify-center md:items-end">
+                                        <div class="flex flex-col items-center w-full md:w-auto">
+                                            <img src="../photos/project-stirling-fridge/hallEffectMounted.png" alt="I2C Compliance testing" class="rounded-lg shadow-lg mb-2 w-full md:w-auto h-auto">
+                                            <p class="text-base text-gray-200 text-center">Hall Sensor on chassis, magnet on crankshaft</p>
+                                        </div>
+                                        <div class="flex flex-col items-center w-full md:w-auto">
+                                            <img src="../photos/project-stirling-fridge/hallWiringDiagram.png" alt="Soft-power up timing testing" class="rounded-lg shadow-lg mb-2 w-full md:w-auto h-auto">
+                                            <p class="text-base text-gray-200 text-center">A3144 wiring diagram; digital output interfaces with MCU</p>
+                                        </div>
+                                        <div class="flex flex-col items-center w-full md:w-auto">
+                                            <img src="../photos/project-stirling-fridge/rotaryEncoder.png" alt="Soft-power up timing testing" class="rounded-lg shadow-lg mb-2 w-full md:w-auto h-auto">
+                                            <p class="text-base text-gray-200 text-center">600 P/R AB 2-phase Rotary Encoder</p>
+                                        </div>
+                                    </div>
+
+
+
+                                    
                                 </div>
                                
                             </div>
