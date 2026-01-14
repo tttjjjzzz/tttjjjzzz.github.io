@@ -8,9 +8,17 @@ function generateNavigation(items, isMobile = false) {
         ? "block text-lg font-medium text-gray-600 hover:text-blue-600"
         : "text-xl font-medium text-gray-600 hover:text-blue-600";
     
-    return items.map(item => `
-        <li><a href="${item.href}" class="${baseClass}">${item.name}</a></li>
-    `).join('');
+    // Detect if we're on a project page (in /projects/ folder)
+    const isProjectPage = window.location.pathname.includes('/projects/');
+    
+    return items.map(item => {
+        // If on project page and href is a hash link, prepend ../index.html
+        const href = isProjectPage && item.href.startsWith('#') 
+            ? `../index.html${item.href}` 
+            : item.href;
+        
+        return `<li><a href="${href}" class="${baseClass}">${item.name}</a></li>`;
+    }).join('');
 }
 
 /**
