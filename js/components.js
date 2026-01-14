@@ -190,7 +190,14 @@ function generateResumeSection() {
     return `
         <div class="max-w-4xl mx-auto mb-12">
             <div class="exp-gradient-spawn p-12 rounded-3xl" style="background: rgba(196, 181, 253, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                <div class="space-y-8">
+                <!-- Description at top -->
+                <div class="mb-12 mx-12 text-center">
+                    <p class="text-gray-200 text-xl leading-relaxed">
+                        Below is a quick overview of my education, location, and contact information. For a comprehensive view of my professional experience and skills, download my full resume.
+                    </p>
+                </div>
+                
+                <div class="space-y-8 mx-8">
                     <!-- Row 1: Education and Location -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
@@ -256,17 +263,20 @@ function generateResumeSection() {
                             `).join('')}
                         </div>
                     </div>
+                    
+                    <!-- Download Resume Button -->
+                    <div class="mt-12 pt-8">
+                        <div class="mb-8" style="height: 2px; background: #c4b5fd; box-shadow: 0 0 8px rgba(196, 181, 253, 0.5); border-radius: 9999px;"></div>
+                        <div class="flex justify-center">
+                            <a href="${SITE_CONFIG.assets.resume}" target="_blank" class="download-resume-button inline-block px-16 py-8 rounded-3xl font-bold text-2xl transition-all relative overflow-hidden" style="background: rgba(196, 181, 253, 0.15); color: #c4b5fd; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
+                                <span class="button-text">Download Resume</span>
+                            <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="flex justify-center">
-            <a href="${SITE_CONFIG.assets.resume}" target="_blank" class="download-resume-button inline-block px-16 py-8 rounded-3xl font-bold text-2xl transition-all relative overflow-hidden" style="background: rgba(196, 181, 253, 0.15); color: #c4b5fd; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
-                <span class="button-text">Download Resume</span>
-                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-                </svg>
-            </a>
         </div>
     `;
 }
