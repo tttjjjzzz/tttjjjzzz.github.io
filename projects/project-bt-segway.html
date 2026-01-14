@@ -74,14 +74,139 @@
                 </div>
 
                 <!-- Project Title -->
-                <div class="max-w-2xl mx-auto w-full">
+                <div class="max-w-4xl mx-auto w-full">
                     <h1 class="text-5xl font-bold text-gray-100 text-center mb-24">Bluetooth-Controlled Segway Robot</h1>
                 </div>
 
                 <!-- Project Content -->
-                <div class="max-w-2xl mx-auto w-full">
-                    <p class="text-lg text-gray-300 mb-8">Project details coming soon.</p>
+                <div class="max-w-3xl mx-auto mb-20 w-full">
+
+                    <!--overview section-->
+                    <div class="mb-12">
+                        <div>
+                            <!-- Section Heading -->
+                            <h2 class="text-4xl font-bold text-purple-200 mb-6">Overview</h2>
+                            <!-- Normal Text -->
+                            <p class="text-lg text-gray-300 mb-8">The project involves building both the hardware and firmware for a Bluetooth-controlled two-wheel Segway robot. Currently, the work focuses on developing the robot’s drive, balancing, environment sensing, Bluetooth communication, and coulomb counting functions for cell monitoring. The aim of the project is to establish the foundational hardware and firmware, with additional features such as obstacle detection and self-driving planned for future iterations. As of now, the component research, schematic design, and PCB component layout stages have been completed, with the schematic and PCB designed using KiCad.</p>
+                        </div>
+                    </div>
+
+                    <!--line element for separation-->
+                    <div class="mx-auto my-8 w-full h-px rounded" style="background: linear-gradient(90deg, #efe8ff 0%, #d6c2ff 40%, #b799ff 65%, #8a5bff 100%); box-shadow: 0 0 8px rgba(138,91,255,0.12);"></div>
+
+                    <!--key featres-->
+                    <div class="mb-12">
+                            <!-- Section Heading -->
+                            <h2 class="text-4xl font-bold text-purple-200 mb-6">Key Features</h2>
+                            <!-- Normal Text -->
+                            <ul class="list-disc list-inside text-lg text-gray-300 space-y-2">
+                                <li>Two-wheel balancing mechanism for stability.</li>
+                                <li>Bluetooth communication for remote control.</li>
+                                <li>Environment sensing capabilities.</li>
+                                <li>Coulomb counting for battery monitoring.</li>
+                            </ul>
+                    </div>
+
+                    <!--line element for separation-->
+                    <div class="mx-auto my-8 w-full h-px rounded" style="background: linear-gradient(90deg, #efe8ff 0%, #d6c2ff 40%, #b799ff 65%, #8a5bff 100%); box-shadow: 0 0 8px rgba(138,91,255,0.12);"></div>
+
+                     <!--Schematic-->
+                    <div class="mb-12">
+                            <!-- Section Heading -->
+                            <h2 class="text-4xl font-bold text-purple-200 mb-6">Schematic</h2>
+                            <p class="text-lg text-gray-300 mb-8">This section outlines the electrical schematic design:</p>
+                            <!--image-->
+                            <div class="mb-12 w-full mx-auto">
+                                <img src="../photos/project-bt-segway/mainSheet.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                <p class="text-base text-gray-200 text-center mb-8">The schematic is organized into Power, Motor, Debug Interface, Environment Sensors, and MCU sections, along with some minor blocks</p>
+                            </div>
+
+                            <!--line element for separation-->
+                            <div class="mx-auto my-8 w-1/2 h-px rounded" style="background: linear-gradient(90deg, #efe8ff 0%, #d6c2ff 40%, #b799ff 65%, #8a5bff 100%); box-shadow: 0 0 8px rgba(138,91,255,0.12);"></div>
+                            
+                            <!--Power Section-->
+                            <div class="mb-12">   
+                                <!--title-->
+                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">Power Section</h3>
+                                <p class="text-lg text-gray-300 mb-6">This board is used to amplify a PWM signal from 3V3 to 12V (fed into a low-side mosfet gate), and it also functions as a DC voltage regulation device. The generated 12V and 3V3 voltage rails are also used to supply different off-board electronic components (MCU, sensors, and display).</p>
+
+                                <!--overview image-->
+                                <div class="mb-12 w-full mx-auto">
+                                    <img src="../photos/project-bt-segway/powerSectionMain.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">Overview of Power Section</p>
+                                </div>            
+                                
+                                
+                                <!--ESD and REVERSE description-->
+                                <ul class="list-disc text-lg text-gray-300 mb-8 ml-4 space-y-2">
+                                        <li class="pl-2">For ESD protection (at the board connector), this circuit uses a TVS diode that clamps the input voltage to a safe level (24V4) to prevent ESD events from damaging components. When the input voltage is above 24V4, the TVS diode short circuits to ground.</li>
+                                        <li class="pl-2">This reverse polarity protection circuit uses the PMOS implementation. Though a forward biased diode would be a more simple implementation for reverse polarity protection, rectifier diodes come with significant voltage drop. Furthermore, while schottky diodes carry low forward voltage drop, schottky diodes that can handle significant current come in large packages.</li>
+                                        <li class="pl-2">On correct input power orientation, Vgs is clamped to 5V6 by D7, opening Q2, where 5V6 is sufficient voltage for our current requirements. On incorrect input power orientation, Q2 stays off, creating an open circuit, protecting on-board 12V-line components from receiving a large negative voltage.</li>
+                                </ul>
+                                <!--image for above-->
+                                <div class="mb-12 w-3/4 mx-auto">
+                                    <img src="../photos/project-bt-segway/esdReverse.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">ESD & Reverse Polarity Protection</p>
+                                </div>
+
+                                <!--buck converter-->
+                                <ul class="list-disc text-lg text-gray-300 mb-8 ml-4 space-y-2">
+                                        <li class="pl-2">To power components on the board, there needs to be a 3V3 line capable of supplying enough current. The AP63200WU is capable of supplying 2A of continuous current, which comfortably exceeds the total current draw from other 3V3 components.</li>
+                                        <li class="pl-2">FB1 serves as a ferrite bead for additional filtering between VDD_3V3 and VDDA_3V3. This value is to be determined experimentally, and an R9 (0 ohms) is to be placed on-board as an option to omit filtering through a ferrite bead.</li>
+                                </ul>
+                                <div class="mb-12 w-full mx-auto">
+                                    <img src="../photos/project-bt-segway/buck.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">12V to 3V3 Step-Down</p>
+                                </div>
+
+                                <!--current sensor-->
+                                <ul class="list-disc text-lg text-gray-300 mb-8 ml-4 space-y-2">
+                                        <li class="pl-2">The INA226 is implemented using a high-side shunt (R12, 2mOhm) for current measurement. The INA226 measures both the bus voltage and shunt voltage, where the current is calculated through the shunt voltage and shunt resistance values.</li>
+                                        <li class="pl-2">This data is communicated to MCU through I2C.</li>
+                                        <li class="pl-2">R24, R25, and C6 are for input filtering.</li>
+                                </ul>
+                                <div class="mb-12 w-3/4 mx-auto">
+                                    <img src="../photos/project-bt-segway/currentSensor.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">High-side Current Sensing and Power Monitor</p>
+                                </div>
+                            </div>
+                            
+                            <!--line element for separation-->
+                            <div class="mx-auto my-8 w-1/2 h-px rounded" style="background: linear-gradient(90deg, #efe8ff 0%, #d6c2ff 40%, #b799ff 65%, #8a5bff 100%); box-shadow: 0 0 8px rgba(138,91,255,0.12);"></div>
+                            
+                            <!--Motor drivers and encoder-->
+                            <div class="mb-12">   
+                                <!--title-->
+                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">Motor Drivers / Encoder Interface</h3>
+                                
+                                <!--Motor Driver description-->
+                                <p class="text-lg text-gray-300 mb-6">The DRV8871 motor drivers are controlled through PWM signals generated by the MCU (pins 3 and 2 in image). The current limiting resistor (R6 and R7) at 18k Ohm sets the output current to 3.55A for each driver.</p>
+                                <!--motor driver image-->
+                                <div class="mb-12 w-3/4 mx-auto">
+                                    <img src="../photos/project-bt-segway/motorDrivers.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">Brushed DC Drivers (H-Bridge)</p>
+                                </div>
+
+                                <!--Encoder interface-->
+                                <p class="text-lg text-gray-300 mb-6">The DRV8871 motor drivers are controlled through PWM signals generated by the MCU (pins 3 and 2 in image). The current limiting resistor (R6 and R7) at 18k Ohm sets the output current to 3.55A for each driver.</p>
+                                <!--Encoder image-->
+                                <div class="mb-12 w-3/4 mx-auto">
+                                    <img src="../photos/project-bt-segway/endoderInterface.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">Motor and Encoder Interface</p>
+                                </div>
+
+
+                            </div>
+                    
+                    </div>
+
+
+
+
+
                 </div>
+
+
             </section>
         </main>
     </div>
