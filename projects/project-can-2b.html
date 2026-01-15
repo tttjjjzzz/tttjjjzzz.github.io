@@ -86,10 +86,40 @@
                             <!-- Section Heading -->
                             <h2 class="text-4xl font-bold text-purple-200 mb-6">Overview</h2>
                             <!-- Normal Text -->
-                            <p class="text-lg text-gray-300 mb-8">The project involves building both the hardware and firmware for a Bluetooth-controlled two-wheel Segway robot. Currently, the work focuses on developing the robot’s drive, balancing, environment sensing, Bluetooth communication, and coulomb counting functions for cell monitoring. The aim of the project is to establish the foundational hardware and firmware, with additional features such as obstacle detection and self-driving planned for future iterations. As of now, the component research, schematic design, and PCB component layout stages have been completed, with the schematic and PCB designed using KiCad.</p>
+                            <p class="text-lg text-gray-300 mb-8">A CAN 2.0B module was developed to interface with and test CAN communication between various motor drivers and a Raspberry Pi. Each module connects to its SPI companion to form a CAN node, enabling validation and testing of CAN communication. The goal of this project is to simplify the communication topology by moving away from SPI and ultimately integrate CAN hardware directly onto the motor driver board. The schematic and PCB were designed using Altium Designer.</p>
                         </div>
                     </div>
 
+                    <!--line element for separation-->
+                    <div class="mx-auto my-8 w-full h-px rounded" style="background: linear-gradient(90deg, #efe8ff 0%, #d6c2ff 40%, #b799ff 65%, #8a5bff 100%); box-shadow: 0 0 8px rgba(138,91,255,0.12);"></div>
+
+                    <!--Schematic-->
+                    <div class="mb-12">
+                            <!-- Section Heading -->
+                            <h2 class="text-4xl font-bold text-purple-200 mb-6">Schematic</h2>
+                            <!-- Normal Text -->
+                            <p class="text-lg text-gray-300 mb-8">This section outlines the electrical schematic design:</p>
+                            <!--image-->
+                            <div class="mb-12 w-full mx-auto">
+                                <img src="../photos/project-can-2b/schematicOverview.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                <p class="text-base text-gray-200 text-center mb-8">Main Sheet</p>
+                            </div>
+
+                             <!--CAN Controller-->
+                            <div class="mb-12">   
+                                <!--title-->
+                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">MCP2515 - CAN Controller</h3>
+                                <p class="text-lg text-gray-300 mb-6">Since the BLDC motor driver IC (STSPIN32F0251) does not include an embedded CAN peripheral, the module uses an MCP2515 to interface with the STSPIN32F0251 through SPI. For simplicity, the implementation omits the TX and RX buffers. The CAN controller is interfaced with an MCP2561 CAN transceiver.</p>
+                                <!--overview image-->
+                                <div class="mb-12 w-3/4 mx-auto">
+                                    <img src="../photos/project-can-2b/canController.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
+                                    <p class="text-base text-gray-200 text-center mb-8">MCP2515 - CAN Controller</p>
+                                </div>            
+                                
+                                
+                            </div>
+                            
+                    </div>
 
 
                 </div>
