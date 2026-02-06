@@ -193,7 +193,7 @@ function generateResumeSection() {
                 <!-- Description at top -->
                 <div class="mb-12 mx-12 text-center">
                     <p class="text-gray-200 text-xl leading-relaxed">
-                        Below is a quick overview of my education, location, and contact information. For a comprehensive view of my professional experience and skills, download my full resume.
+                        Below is a quick overview of my education, location, and contact information. For a comprehensive view of my professional experience and skills, please download my full resume.
                     </p>
                 </div>
                 

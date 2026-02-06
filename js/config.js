@@ -2,7 +2,7 @@
 const SITE_CONFIG = {
     // Personal Information
     personal: {
-        name: "TJJZ",
+        name: "Tiger Zhou",
         fullName: "Tiger Zhou",
         title: "An Integrated Engineering Student at UBC, Specializing in Electrical Engineering",
         tagline: "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges. ",
@@ -89,9 +89,10 @@ const SITE_CONFIG = {
             period: "Sep 2024 – Present",
                 logo: "photos/logos/ubc_thunderbots_logo.jpg",
             responsibilities: [
-                "Develop and debug SPI communication and BLDC motor control C firmware for STSPIN32F0251 driver",
-                "Develop and optimize schematics and PCBs for Motor Driver, Power Board, UI Board, and ball velocity measurement device using Altium Designer",
-                "Plan and conduct design verification on various electrical hardware"
+                "Designed a CAN 2.0B hardware module to enable reliable communication between Raspberry Pi and motor drivers.",
+                "Spearheaded a major PCB layout overhaul for a BLDC motor driver, incorporating a new current sensing architecture and on-board CAN communication to elevate control precision and network capability.",
+                "Debugged and validated motor driver, power, and UI hardware using laboratory equipment such as oscilloscopes, logic analyzers, and multimeters to identify and resolve hardware issues.",
+                "Develop and debug SPI communication and BLDC motor control C firmware for STSPIN32F0251 motor drivers."
             ]
         },
         {
@@ -102,9 +103,9 @@ const SITE_CONFIG = {
             period: "May 2025 – Aug 2025",
                 logo: "photos/logos/consen_automation_logo.jpg",
             responsibilities: [
-                "Developed hardware verification procedures for two communication module PCBs (Ethernet to Fiber Optic), ensuring compliance with design requirements",
-                "Collaborated with hardware and firmware engineers to analyze, revise, and debug two versions of a communication module PCB through SMT/THT soldering and various signal measurement techniques",
-                "Supported compliance testing (temperature, and ESD) for multiple in-house communication module PCBs"
+                "Developed and executed hardware verification procedures for 5+ communication module PCBAs, testing power, clock signals, logic and status lines, reset, ripple/noise levels, and timing performance; researched component characteristics to create robust test plans.",
+                "Collaborated on building and configuring test environments to support hardware verification procedures, including simulating real load conditions for accurate and reliable testing.",
+                "Supported environmental compliance testing (thermal shock, temperature cycling, and ESD) for multiple in-house communication module PCBs."
             ]
         },
         {
@@ -115,9 +116,9 @@ const SITE_CONFIG = {
             period: "May 2024 – Aug 2024",
                 logo: "photos/logos/consen_automation_logo.jpg",
             responsibilities: [
-                "Designed and optimized CAN bus to Fiber Optic communication module schematic and PCB using Cadence Allegro/OrCAD",
-                "Planned and conducted design verification (power, clock, logic and status, reset, ripple and noise, and timing signals) for various embedded hardware products to ensure performance and compliance with design specifications",
-                "Gained practical experience working with CAN, RS485, SPI, USART, Ethernet (APL), and Fiber Optic protocols in embedded systems"
+                "Designed CAN-to-fiber communication module schematic and PCB using Cadence Allegro/OrCAD for industrial safety systems.",
+                "Performed hardware bring-up and debugging across CAN, RS485, SPI, USART, and fiber optic interfaces.",
+                "Conducted design verification and collaborated across teams to ensure compliance with functional requirements."
             ]
         }
         
@@ -159,16 +160,23 @@ const SITE_CONFIG = {
             tools: "Altium Designer, Circuit Design, PCB Design, CAN Protocol",
             description: "Developed CAN 2.0B Module designed to interface with and test SPI to CAN communication migration for various motor drivers and a RaspberryPi Computer.",
             link: "projects/project-can-2b.html"
+        },
+        {
+            id: "motordriver-v6-4",
+            title: "MotorDriver V6.4 - UBC Thunderbots",
+            tools: "Altium Designer, Circuit Design, PCB Design, Power Electronics, EMI&EMC",
+            description: "Currently redesigning the BLDC motordriver for UBC Thunderbots student design team.",
+            link: "projects/project-motordriver-v6-4.html"
         }
     ],
 
     // Assets
     assets: {
-        resume: "resume.pdf"
+        resume: "documents/resume 2025-2026.pdf"
     },
 
     // Copyright
-    copyright: "2024 TJJZ"
+    copyright: "2026 Tiger Zhou"
 };
 
 // SVG Icons Library
