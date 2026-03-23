@@ -75,7 +75,28 @@ const SITE_CONFIG = {
         { name: "About", href: "#about" },
         { name: "Experience", href: "#experience" },
         { name: "Projects", href: "#projects" },
+        { name: "Skills", href: "#skills" },
         { name: "Contact", href: "#contact" }
+    ],
+
+    // Skills
+    skills: [
+        { name: 'Altium Designer', color: '#A259FF', abbr: 'ALT' },
+        { name: 'Cadence',         color: '#FF6B35', abbr: 'CAD' },
+        { name: 'KiCad',           color: '#314CB0', abbr: 'KiC' },
+        { name: 'SolidWorks',      color: '#E22828', abbr: 'SW'  },
+        { name: 'LTspice',         color: '#8B1A1A', abbr: 'LTS' },
+        { name: 'Quartus Prime',   color: '#0071C5', abbr: 'QRT' },
+        { name: 'C',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-plain.svg' },
+        { name: 'C++',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg' },
+        { name: 'Python',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg' },
+        { name: 'C#',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-plain.svg' },
+        { name: 'MATLAB',  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-plain.svg' },
+        { name: 'Git',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg' },
+        { name: 'Raspberry Pi', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-plain.svg' },
+        { name: 'STM32',   color: '#03234B', abbr: 'STM' },
+        { name: 'ESP32',   color: '#E7352C', abbr: 'ESP' },
+        { name: 'FreeRTOS', color: '#27AE60', abbr: 'FRT' },
     ],
 
     // Professional Experience
