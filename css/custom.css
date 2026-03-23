@@ -34,11 +34,19 @@
 #mobile-nav {
     padding: 0 !important;
     list-style: none;
+}
+#mobile-nav li {
     text-align: center;
+}
+#mobile-nav li a {
+    display: block;
+    text-align: center;
+    width: 100%;
 }
 #header-social-mobile {
     justify-content: center !important;
 }
+
 
 /* Global scale — sets rem base to 80% of default (16px → 12.8px).
    All Tailwind rem-based utilities (spacing, font sizes, padding) scale proportionally. */
