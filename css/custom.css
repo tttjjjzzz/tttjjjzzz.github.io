@@ -1,3 +1,28 @@
+/* Scroll progress bar — fixed thin line at very top of viewport */
+#scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #a78bfa, #c4b5fd);
+    z-index: 100;
+    transition: width 0.1s linear;
+}
+
+/* Header — fully transparent at top, glass-metallic when scrolled */
+#site-header {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+#site-header.scrolled {
+    background: rgba(249, 250, 251, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
 /* Global scale — sets rem base to 80% of default (16px → 12.8px).
    All Tailwind rem-based utilities (spacing, font sizes, padding) scale proportionally. */
 html {

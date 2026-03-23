@@ -1,3 +1,21 @@
+// Scroll progress bar + header border visibility
+(function () {
+    const progressBar = document.getElementById('scroll-progress-bar');
+    const header = document.getElementById('site-header');
+
+    function onScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+        if (progressBar) progressBar.style.width = pct + '%';
+        if (header) header.classList.toggle('scrolled', scrollTop > 0);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on load
+})();
+
 // Mobile Menu Toggle Script
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('mobile-menu-button');
