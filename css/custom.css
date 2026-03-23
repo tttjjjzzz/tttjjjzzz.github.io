@@ -24,25 +24,19 @@
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* Mobile menu — center on full viewport width */
-#mobile-menu {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
 #mobile-nav {
     padding: 0 !important;
     list-style: none;
 }
 #mobile-nav li {
-    text-align: center;
-}
-#mobile-nav li a {
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
+#mobile-nav li a {
+    display: inline;
+}
+
 #header-social-mobile {
     justify-content: center !important;
 }
