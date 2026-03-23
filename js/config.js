@@ -4,7 +4,8 @@ const SITE_CONFIG = {
     personal: {
         name: "Tiger Zhou",
         fullName: "Tiger Zhou",
-        title: "An Integrated Engineering Student at UBC, Specializing in Electrical Engineering",
+        photo: "photos/profile.jpg",
+        title: "Integrated Engineering Student at UBC, Specializing in Electrical Engineering",
         tagline: "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges. ",
         expertise: "My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development",
         websitePurpose: "This website aims to showcase concrete examples of my work across various engineering projects. Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses."
@@ -72,15 +73,26 @@ const SITE_CONFIG = {
 
     // Navigation Items
     navigation: [
+        { name: "Home", href: "#home" },
         { name: "About", href: "#about" },
         { name: "Experience", href: "#experience" },
         { name: "Projects", href: "#projects" },
-        { name: "Resume", href: "#resume" },
         { name: "Contact", href: "#contact" }
     ],
 
     // Professional Experience
     experience: [
+        {
+            id: "arlo-technologies",
+            role: "Hardware Engineer - Co-op",
+            company: "Arlo Technologies",
+            location: "Richmond, BC, Canada",
+            period: "May 2026 –",
+            logo: "photos/logos/arlo_logo.jpg",
+            responsibilities: [
+                "Incoming Hardware Engineer Co-op."
+            ]
+        },
         {
             id: "ubc-thunderbots",
             role: "Electrical Team Member",

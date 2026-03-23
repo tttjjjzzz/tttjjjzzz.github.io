@@ -4,9 +4,9 @@
  * Generate navigation menu items
  */
 function generateNavigation(items, isMobile = false) {
-    const baseClass = isMobile 
-        ? "block text-lg font-medium text-gray-600 hover:text-blue-600"
-        : "text-xl font-medium text-gray-600 hover:text-blue-600";
+    const baseClass = isMobile
+        ? "block text-lg font-display font-light tracking-wider text-gray-100 hover:text-purple-300 transition-colors duration-200"
+        : "text-lg font-display font-light tracking-wider text-gray-100 hover:text-purple-300 transition-colors duration-200";
     
     // Detect if we're on a project page (in /projects/ folder)
     const isProjectPage = window.location.pathname.includes('/projects/');
@@ -64,8 +64,8 @@ function generateExperienceCard(exp) {
             <div class="flex-1">
                 <header class="flex flex-row justify-between items-start mb-3">
                     <div>
-                        <h3 class="text-2xl font-extrabold text-gray-900 flex items-center gap-2">${exp.role}</h3>
-                        <h4 class="text-xl font-bold text-gray-700 mt-2 mb-2 flex items-center gap-2">
+                        <h3 class="text-2xl font-display font-semibold tracking-wide text-gray-900 flex items-center gap-2">${exp.role}</h3>
+                        <h4 class="text-xl font-medium text-gray-700 mt-2 mb-2 flex items-center gap-2">
                             <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 017.5 2h9A1.5 1.5 0 0118 3.5v9a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 016 12.5v-9zM7.5 3a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h9a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5h-9z" clip-rule="evenodd"/>
                                 <path d="M3 8.5A1.5 1.5 0 014.5 7h.5v1h-.5a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h9a.5.5 0 00.5-.5V17h1v.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 013 17.5v-9z"/>
@@ -73,8 +73,8 @@ function generateExperienceCard(exp) {
                             ${exp.company}
                         </h4>
                     </div>
-                    <div class="flex flex-col items-end gap-1">
-                        <span class="text-lg font-semibold text-gray-700 flex items-center gap-2">
+                    <div class="flex flex-col items-end gap-1 pt-1">
+                        <span class="text-lg font-semibold text-gray-700 flex items-center gap-2 ">
                             <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                             </svg>
@@ -111,7 +111,7 @@ function generateProjectCard(project) {
     return `
         <a href="${project.link}" class="project-card block py-10 px-10 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 flex flex-col h-full" style="min-height: 300px;">
             <div class="project-card-content flex flex-col flex-1">
-                <h3 class="project-title text-2xl font-bold text-gray-100 mb-6">
+                <h3 class="project-title text-2xl font-display font-medium tracking-wide text-gray-100 mb-6">
                     ${project.title}
                 </h3>
                 <p class="text-lg text-gray-100 mb-4">
@@ -137,47 +137,92 @@ function generateProjectCard(project) {
 }
 
 /**
+ * Generate Home / Hero Section
+ */
+function generateHomeSection() {
+    const { personal, social, assets } = SITE_CONFIG;
+    const isProjectPage = window.location.pathname.includes('/projects/');
+    const contactHref = isProjectPage ? '../index.html#contact' : '#contact';
+
+    const socialPills = [
+        { name: 'GitHub',   platform: 'github',   url: social.github,            target: '_blank' },
+        { name: 'LinkedIn', platform: 'linkedin', url: social.linkedin,          target: '_blank' },
+        { name: 'Email',    platform: 'email',    url: `mailto:${social.email}`, target: '' },
+    ].map(({ name, platform, url, target }) => `
+        <a href="${url}" ${target ? `target="${target}"` : ''} class="hero-social-icon" aria-label="${name}">
+            <span class="sr-only">${name}</span>
+            <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                ${ICONS[platform]}
+            </svg>
+        </a>
+    `).join('');
+
+    return `
+        <div class="flex flex-col items-center justify-center text-center py-24 md:py-32">
+
+            <!-- Name -->
+            <h1 class="text-6xl md:text-7xl font-display font-light tracking-wider text-gray-100 mb-8">
+                ${personal.name}
+            </h1>
+
+            <!-- Title -->
+            <p class="text-xl md:text-2xl font-light tracking-wide text-gray-300 max-w-2xl mb-12">
+                ${personal.title}
+            </p>
+
+            <!-- Social pills -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                ${socialPills}
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-24">
+                <a href="${assets.resume}" target="_blank" class="hero-btn-secondary">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                    View Resume
+                </a>
+                <a href="${contactHref}" class="hero-btn-primary">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Scroll indicator -->
+            <a href="#about" class="scroll-indicator cursor-pointer">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    `;
+}
+
+/**
  * Generate About Section
  */
 function generateAboutSection() {
-    const about = SITE_CONFIG.about;
+    const { about, personal } = SITE_CONFIG;
     return `
-        <div class="max-w-8xl mx-auto px-10 relative">
-            <!-- Welcome Badge -->
-            <div class="flex justify-center mb-20">
-                <div class="flex flex-col items-center">
-                    <svg class="w-24 h-24 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <p class="text-gray-100 text-2xl font-bold mt-3">${about.welcome}</p>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+            <!-- Left: Photo -->
+            <div class="flex justify-center md:justify-end">
+                <div class="about-photo-frame">
+                    <img src="${personal.photo}" alt="${personal.name}" class="about-photo-img" />
                 </div>
             </div>
-            <div class="mt-20">
-                <h2 class="text-5xl md:text-6xl font-bold text-gray-100 text-center">${about.greeting}</h2>
-                <p class="text-2xl md:text-3xl text-gray-100 text-center mt-8">${about.subtitle}</p>
-            </div>
-            <!-- Centered border element -->
-            <div class="w-24 h-1 bg-gray-100 mx-auto mt-10 mb-10"></div> 
-            
-            ${about.paragraphs.map((p) => `
-                <p class="text-lg md:text-2xl text-gray-100 leading-relaxed text-center max-w-3xl mx-auto mt-6">
-                    ${p}
-                </p>
-            `).join('')}
 
-            <!-- New Social Icons Container -->
-            <div id="about-social" class="flex justify-center items-center gap-x-8 mt-20">
-                ${generateSocialIcons(SITE_CONFIG.social, 'w-9 h-9')}
+            <!-- Right: Description -->
+            <div class="flex flex-col justify-center">
+                ${about.paragraphs.map(p => `
+                    <p class="text-lg text-gray-300 leading-relaxed mb-5">${p}</p>
+                `).join('')}
             </div>
 
-            <!-- Scroll Down Indicator -->
-            <div class="flex justify-center mt-48">
-                <a href="#experience" class="scroll-indicator cursor-pointer">
-                    <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </a>
-            </div>
         </div>
     `;
 }
@@ -201,8 +246,8 @@ function generateResumeSection() {
                     <!-- Row 1: Education and Location -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
-                            <h3 class="text-3xl font-bold text-purple-300 mb-4 flex items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <h3 class="text-2xl font-display font-light tracking-wider text-purple-300 mb-4 flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path d="M12 14l9-5-9-5-9 5 9 5z" />
                                     <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
@@ -215,8 +260,8 @@ function generateResumeSection() {
                         </div>
                         
                         <div>
-                            <h3 class="text-3xl font-bold text-purple-300 mb-4 flex items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <h3 class="text-2xl font-display font-light tracking-wider text-purple-300 mb-4 flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
@@ -231,8 +276,8 @@ function generateResumeSection() {
                     <!-- Row 2: Contact and Links -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
-                            <h3 class="text-3xl font-bold text-purple-300 mb-4 flex items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <h3 class="text-2xl font-display font-light tracking-wider text-purple-300 mb-4 flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                                 Contact Information
@@ -247,8 +292,8 @@ function generateResumeSection() {
                         </div>
                         
                         <div>
-                            <h3 class="text-3xl font-bold text-purple-300 mb-4 flex items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <h3 class="text-2xl font-display font-light tracking-wider text-purple-300 mb-4 flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                                 </svg>
                                 Links
@@ -287,9 +332,9 @@ function generateResumeSection() {
 function generateContactSection() {
     const contact = SITE_CONFIG.contact;
     return `
-        <h2 class="text-7xl font-bold text-gray-100 text-center">${contact.heading}</h2>
-        <!-- Centered border element -->
-        <div class="w-24 h-1 bg-gray-200 mx-auto mt-6 mb-16"></div>
+        <p class="section-label">// Contact</p>
+        <h2 class="text-6xl font-display font-light tracking-wider text-gray-100 text-center">${contact.heading}</h2>
+        <div class="section-divider"></div>
 
         <p class="text-3xl text-gray-100 leading-relaxed mb-6 text-center">
             ${contact.description}
@@ -328,6 +373,12 @@ function initializePage() {
         headerSocialMobile.innerHTML = generateSocialIcons(SITE_CONFIG.social);
     }
     
+    // Home Section
+    const homeContent = document.getElementById('home-content');
+    if (homeContent) {
+        homeContent.innerHTML = generateHomeSection();
+    }
+
     // About Section
     const aboutContent = document.getElementById('about-content');
     if (aboutContent) {
@@ -344,12 +395,6 @@ function initializePage() {
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
         projectsGrid.innerHTML = SITE_CONFIG.projects.map(generateProjectCard).join('');
-    }
-    
-    // Resume Section
-    const resumeContent = document.getElementById('resume-content');
-    if (resumeContent) {
-        resumeContent.innerHTML = generateResumeSection();
     }
     
     // Contact Section

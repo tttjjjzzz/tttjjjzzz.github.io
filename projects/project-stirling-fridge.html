@@ -10,7 +10,9 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ['Inter', 'sans-serif'],
+                        'sans': ['Oxanium', 'sans-serif'],
+                        'display': ['Oxanium', 'sans-serif'],
+                        'accent': ['Raleway', 'sans-serif'],
                     },
                     maxWidth: {
                         '8xl': '90rem',
@@ -21,7 +23,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body class="font-sans text-gray-100 antialiased">
@@ -34,7 +36,7 @@
         <div class="w-full px-6 py-6">
             <div class="flex items-center justify-between w-full">
                 <div class="flex-shrink-0">
-                    <h1 id="header-name" class="text-4xl font-normal text-gray-100">Tiger Zhou</h1>
+                    <h1 id="header-name" class="text-4xl font-display font-light tracking-wider text-gray-100">Tiger Zhou</h1>
                 </div>
                 <nav class="hidden md:mt-0 md:flex-1 md:flex md:justify-center">
                     <ul id="desktop-nav" class="flex flex-col md:flex-row flex-wrap gap-y-2 gap-x-8">
@@ -75,7 +77,7 @@
 
                 <!-- Project Title -->
                 <div class="max-w-4xl mx-auto w-full">
-                    <h1 class="text-5xl font-bold text-gray-100 text-center mb-24 leading-normal">Stirling Refrigerator for Vaccine Storage</h1>
+                    <h1 class="text-5xl font-display font-light tracking-wider text-gray-100 text-center mb-24 leading-normal">Stirling Refrigerator for Vaccine Storage</h1>
                 </div>
                 
                 <!-- Project Content -->
@@ -84,7 +86,7 @@
                     <div class="max-w-3xl mx-auto mb-20 w-full">
                         <div class="mb-12">
                             <!-- Section Heading -->
-                            <h2 class="text-4xl font-bold text-purple-200 mb-6">Overview</h2>
+                            <h2 class="text-4xl font-display font-light tracking-wider text-purple-200 mb-6">Overview</h2>
                             <!-- Normal Text -->
                             <p class="text-lg text-gray-300 mb-8">This project focused on developing a sustainable, reliable, and portable vaccine cooling system capable of maintaining a stable 2-8 °C storage temperature for use in remote communities. The design leveraged a Stirling refrigeration cycle, a clean and refrigerant-free technology, to provide consistent cooling without relying on toxic or environmentally harmful refrigerants.</p>
                         </div>
@@ -105,7 +107,7 @@
 
                             <!-- Section Heading -->
                              <div class="mb-20"> 
-                                <h2 class="text-4xl font-bold text-purple-200 mb-6">My Contributions</h2>
+                                <h2 class="text-4xl font-display font-light tracking-wider text-purple-200 mb-6">My Contributions</h2>
                                 <!-- description -->
                                 <p class="text-lg text-gray-300 mb-8">For this project, I designed and implemented multiple hardware and software/firmware components. Each of these components are listed are described below:</p>
                             </div>
@@ -113,7 +115,7 @@
                             <!--Gate Driver and Voltage PCB-->
                             <div class="mb-20">   
                                 <!--description-->
-                                <h3 class="text-2xl font-semibold text-purple-300 mb-4">Custom Gate Driver & Power Board PCB</h3>
+                                <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">Custom Gate Driver & Power Board PCB</h3>
                                 <p class="text-lg text-gray-300 mb-6">This board is used to amplify a PWM signal from 3V3 to 12V (fed into a low-side mosfet gate), and it also functions as a DC voltage regulation device. The generated 12V and 3V3 voltage rails are also used to supply different off-board electronic components (MCU, sensors, and display).</p>
                                 <p class="text-lg text-gray-300 mb-6">The gate driver and voltage regulation functions are integrated onto the same board due to space constraints.</p>
                                 <!-- schematic and pcb images -->
@@ -149,7 +151,7 @@
                             <div class="mb-20">   
                                 <!--description-->
                                 <div class="mb-10">
-                                    <h3 class="text-2xl font-semibold text-purple-300 mb-4">Automated Thermistor Calibration Setup</h3>
+                                    <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">Automated Thermistor Calibration Setup</h3>
                                     <p class="text-lg text-gray-300 mb-4">With a small temperature range and high accuracy demands, the system’s temperature sensors (NTC thermistors) must be calibrated and customly-fit to the 2–8 °C range. This is done by collecting thermistor resistance and environment temperature data (measured using a digital temperature sensor), plotting these data points, then fitting a 4th order polynomial to characterize the thermistor. The calibration method provides a more accurate temperature–resistance profile than using the thermistor Beta value with the Beta equation.</p>
                                     <p class="text-lg text-gray-300 mb-4">To ensure high calibration accuracy, many data points are collected over the sampling period (determined by magnitude of environment temperature change and rate of temperature change).</p>
                                 </div>
@@ -189,7 +191,7 @@
                             <div class="mb-20">   
                                 <!--description-->
                                 <div class="mb-10">
-                                    <h3 class="text-2xl font-semibold text-purple-300 mb-4">Sensor Integration</h3>
+                                    <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">Sensor Integration</h3>
                                     <p class="text-lg text-gray-300 mb-4">This project utilized sensors to actively measure temperature, pressure, RPM, and crank-angle to monitor thermal, pneumatic, and mechanical conditions.</p>
                                     <p class="text-lg text-gray-300 mb-4">Collected data was used to characterize performance (such as theoretical efficiency) and provide control feedback.</p>
                                 </div>

@@ -10,7 +10,9 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ['Inter', 'sans-serif'],
+                        'sans': ['Oxanium', 'sans-serif'],
+                        'display': ['Oxanium', 'sans-serif'],
+                        'accent': ['Raleway', 'sans-serif'],
                     },
                     maxWidth: {
                         '8xl': '90rem',
@@ -21,7 +23,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body class="font-sans text-gray-100 antialiased">
@@ -34,7 +36,7 @@
         <div class="w-full px-6 py-6">
             <div class="flex items-center justify-between w-full">
                 <div class="flex-shrink-0">
-                    <h1 id="header-name" class="text-4xl font-normal text-gray-100">Tiger Zhou</h1>
+                    <h1 id="header-name" class="text-4xl font-display font-light tracking-wider text-gray-100">Tiger Zhou</h1>
                 </div>
                 <nav class="hidden md:mt-0 md:flex-1 md:flex md:justify-center">
                     <ul id="desktop-nav" class="flex flex-col md:flex-row flex-wrap gap-y-2 gap-x-8">
@@ -75,7 +77,7 @@
 
                 <!-- Project Title -->
                 <div class="max-w-5xl mx-auto w-full">
-                    <h1 class="text-5xl font-bold text-gray-100 text-center mb-24">CAN 2.0B Module</h1>
+                    <h1 class="text-5xl font-display font-light tracking-wider text-gray-100 text-center mb-24">CAN 2.0B Module</h1>
                 </div>
                 
                 <!-- Project Content -->
@@ -84,7 +86,7 @@
                     <div class="mb-12">
                         <div>
                             <!-- Section Heading -->
-                            <h2 class="text-4xl font-bold text-purple-200 mb-6">Overview</h2>
+                            <h2 class="text-4xl font-display font-light tracking-wider text-purple-200 mb-6">Overview</h2>
                             <!-- Normal Text -->
                             <p class="text-lg text-gray-300 mb-8">A CAN 2.0B module was developed to interface with and test CAN communication between various motor drivers and a Raspberry Pi. Each module connects to its SPI companion to form a CAN node, enabling validation and testing of CAN communication. The goal of this project is to simplify the communication topology by moving away from SPI and ultimately integrate CAN hardware directly onto the motor driver board. The schematic and PCB were designed using Altium Designer.</p>
                         </div>
@@ -96,7 +98,7 @@
                     <!--Schematic-->
                     <div class="mb-12">
                         <!-- Section Heading -->
-                        <h2 class="text-4xl font-bold text-purple-200 mb-6">Schematic</h2>
+                        <h2 class="text-4xl font-display font-light tracking-wider text-purple-200 mb-6">Schematic</h2>
                         <!-- Normal Text -->
                         <p class="text-lg text-gray-300 mb-8">This section outlines the electrical schematic design:</p>
                         <!--image-->
@@ -111,7 +113,7 @@
                         <!--CAN Controller-->
                         <div class="mb-12">   
                             <!--title-->
-                            <h3 class="text-2xl font-semibold text-purple-300 mb-4">MCP2515 - CAN Controller</h3>
+                            <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">MCP2515 - CAN Controller</h3>
                             <p class="text-lg text-gray-300 mb-6">Since the BLDC motor driver IC (STSPIN32F0251) does not include an embedded CAN peripheral, the module uses an MCP2515 to interface with the STSPIN32F0251 through SPI. For simplicity, the implementation omits the TX and RX buffers. The CAN controller is interfaced with an MCP2561 CAN transceiver.</p>
                             <!--overview image-->
                             <div class="mb-12 w-3/4 mx-auto">
@@ -126,7 +128,7 @@
                         <!--Oscillator-->
                         <div class="mb-12">   
                             <!--title-->
-                            <h3 class="text-2xl font-semibold text-purple-300 mb-4">AMB3B-16.000MHz - Oscillator</h3>
+                            <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">AMB3B-16.000MHz - Oscillator</h3>
 
                             <p class="text-lg text-gray-300 mb-6">The MCP2515 is paired with an external oscillator (16MHz), where the load capacitances were calculated using the following equation:</p>
                             <!--equation image-->
@@ -149,7 +151,7 @@
                         <!--Oscillator-->
                         <div class="mb-12">   
                             <!--title-->
-                            <h3 class="text-2xl font-semibold text-purple-300 mb-4">MCP2561 - CAN Transceiver</h3>
+                            <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">MCP2561 - CAN Transceiver</h3>
                             <p class="text-lg text-gray-300 mb-6">The MCP2561 CAN transceiver serves as the interface between the CAN controller (MCP2515) and the CAN bus. Split termination is implemented using the SPLIT output pin, as recommended by the device datasheet, to reduce interference on the differential line. The CAN bus lines are connected to a screw terminal labeled J2, providing a convenient connection point for testing.</p>
                             <div class="mb-12 w-3/4 mx-auto">
                                 <img src="../photos/project-can-2b/transceiver.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
@@ -163,7 +165,7 @@
                         <!--header-->
                         <div class="mb-12">   
                             <!--title-->
-                            <h3 class="text-2xl font-semibold text-purple-300 mb-4">Connectors</h3>
+                            <h3 class="text-2xl font-display font-medium tracking-wide text-purple-300 mb-4">Connectors</h3>
                             <p class="text-lg text-gray-300 mb-6">For convenience purposes, this CAN module uses a 1x8P Vertical Male Header to connect signal and power lines to off-board MCU-Pins/Power/GND</p>
                             <div class="mb-12 w-3/4 mx-auto">
                                 <img src="../photos/project-can-2b/maleHeadConnector.png" alt="Overview of Module Implementation" class="rounded-lg shadow-lg mb-2 w-full object-cover">
@@ -179,7 +181,7 @@
                     <div class="mb-12">
                         <!--overview-->
                         <!-- Section Heading -->
-                        <h2 class="text-4xl font-bold text-purple-200 mb-6">Board Layout</h2>
+                        <h2 class="text-4xl font-display font-light tracking-wider text-purple-200 mb-6">Board Layout</h2>
                         <!-- Normal Text -->
                         <p class="text-lg text-gray-300 mb-8">The board layout was designed prioritizing signal integrity and ease of testing and prototyping during development and use. It adopts a 2-layer stackup with SIGNAL on top layer and GND on bottom layer. Furthermore, the mounting holes were added to provide a means of securing the modules to a chassis.</p>
                         <!--pcb images-->
@@ -198,7 +200,7 @@
                     <div class="mb-12">
                         <!--overview-->
                         <!-- Section Heading -->
-                        <h2 class="text-4xl font-bold text-purple-200 mb-6">Implementation</h2>
+                        <h2 class="text-4xl font-display font-light tracking-wider text-purple-200 mb-6">Implementation</h2>
                         <!-- Normal Text -->
                         <p class="text-lg text-gray-300 mb-8">The CAN modules' functions were verified using ESP32 microcontrollers as “mock” MCUs that were connected to the modules through SPI. The modules were then connected to each other through the CAN bus, allowing the microcontrollers to exchange messages in a multi-node network. This setup validated reliable data transmission across the CAN communication system.</p>
                         <!--pcb images-->
