@@ -5,7 +5,7 @@
  */
 function generateNavigation(items, isMobile = false) {
     const baseClass = isMobile
-        ? "block text-lg font-display font-light tracking-wider text-gray-100 hover:text-purple-300 transition-colors duration-200"
+        ? "text-3xl font-display font-light tracking-wider text-gray-100 hover:text-purple-300 transition-colors duration-200"
         : "text-lg font-display font-light tracking-wider text-gray-100 hover:text-purple-300 transition-colors duration-200";
     
     // Detect if we're on a project page (in /projects/ folder)
@@ -174,13 +174,13 @@ function generateHomeSection() {
             <!-- CTA buttons -->
             <div class="flex flex-wrap justify-center gap-4 mb-24">
                 <a href="${assets.resume}" target="_blank" class="hero-btn-secondary">
-                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                     </svg>
                     View Resume
                 </a>
                 <a href="${contactHref}" class="hero-btn-primary">
-                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                     Get in Touch
@@ -207,15 +207,17 @@ function generateAboutSection() {
 
             <!-- Left: Photo -->
             <div class="flex justify-center md:justify-end">
-                <div class="about-photo-frame">
-                    <img src="${personal.photo}" alt="${personal.name}" class="about-photo-img" />
+                <div class="about-photo-wrapper">
+                    <div class="about-photo-frame">
+                        <img src="${personal.photo}" alt="${personal.name}" class="about-photo-img" />
+                    </div>
                 </div>
             </div>
 
             <!-- Right: Description -->
             <div class="flex flex-col justify-center">
                 ${about.paragraphs.map(p => `
-                    <p class="text-lg text-gray-300 leading-relaxed mb-5">${p}</p>
+                    <p class="text-gray-300 leading-relaxed mb-5" style="font-size: 20px;">${p}</p>
                 `).join('')}
             </div>
 
@@ -366,7 +368,7 @@ function initializePage() {
     // Social Icons - Header Mobile
     const headerSocialMobile = document.getElementById('header-social-mobile');
     if (headerSocialMobile) {
-        headerSocialMobile.innerHTML = generateSocialIcons(SITE_CONFIG.social);
+        headerSocialMobile.innerHTML = generateSocialIcons(SITE_CONFIG.social, 'w-10 h-10');
     }
     
     // Home Section

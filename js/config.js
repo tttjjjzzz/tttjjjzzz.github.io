@@ -2,8 +2,8 @@
 const SITE_CONFIG = {
     // Personal Information
     personal: {
-        name: "Tiger Zhou",
-        fullName: "Tiger Zhou",
+        name: "Tiger Zhou - 周觉林",
+        fullName: "Tiger Zhou - 周觉林",
         photo: "photos/profile.jpg",
         title: "Integrated Engineering Student at UBC, Specializing in Electrical Engineering",
         tagline: "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges. ",
@@ -29,13 +29,11 @@ const SITE_CONFIG = {
     // About Section Content
     about: {
         welcome: 'W E L C O M E !',
-        greeting: 'Hi, I am Tiger Zhou 👋',
+        greeting: 'Hi, I am Tiger Zhou - 周觉林 👋',
         subtitle: 'An Integrated Engineering Student at UBC, Specializing in Electrical Engineering',
         paragraphs: [
-            "As an avid learner, I'm passionate about leveraging my knowledge to solve real world engineering challenges.",
-            "While I am eager to explore various fields in the industry, I am most drawn to the robotics and embedded systems sector",
-            "My experiences span areas including embedded systems, power electronics, hardware verification, and firmware development",
-            "This website aims to showcase concrete examples of my work across various engineering projects. Included are past/current projects from work experiences, extracurricular initiatives, personal projects, and academic courses."
+            "I'm an <span class=\"about-highlight\">Integrated Engineering</span> student at the <span class=\"about-highlight\">University of British Columbia</span>, specializing in <span class=\"about-highlight\">Electrical and Computer Engineering</span>. I'm driven by a desire to create meaningful, positive change — using my skills and experiences to build solutions that genuinely help people. On the technical side, I'm particularly drawn to embedded systems, where the intersection of hardware and software opens up endless possibilities for real-world impact.",
+            "Currently, I'm a senior <span class=\"about-highlight\">Electrical Team Member</span> for the <span class=\"about-highlight\">UBC Thunderbots</span> student design team, where I mainly work with motor driver hardware for autonomous soccer-playing robots."
         ]
     },
     
@@ -188,7 +186,7 @@ const SITE_CONFIG = {
     },
 
     // Copyright
-    copyright: "2026 Tiger Zhou"
+    copyright: "2026 Tiger Zhou - 周觉林"
 };
 
 // SVG Icons Library
