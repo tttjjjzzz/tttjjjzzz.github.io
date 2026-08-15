@@ -86,50 +86,54 @@ const SITE_CONFIG = {
             role: "Hardware Engineer - Co-op",
             company: "Arlo Technologies",
             location: "Richmond, BC, Canada",
-            period: "May 2026 –",
+            period: "May 2026 – Present",
             logo: "photos/logos/arlo_logo.jpg",
             responsibilities: [
-                "Incoming Hardware Engineer Co-op."
+                "Built custom test automation for system-level power consumption profiling, battery and component-level thermal characterization, and microphone SNR measurement, using Python and TCL scripting for instrument control and data processing.",
+                "Root-caused a system-level power integrity issue by bisecting the power tree section by section with oscilloscope-based measurement, isolating the fault to insufficient input capacitance at the full-bridge rectifier output; validated the fix through board-level rework and re-test.",
+                "Executed DVT and PVT validation on new doorbell products, triaging and closing defects spanning power consumption, thermal performance, video quality, and PIR sensor coexistence across hardware, firmware, and software QA teams.",
+                "Supporting EVT-stage design and bring-up of a next-generation 4K streaming doorbell, contributing to validation planning and early hardware evaluation."
             ]
         },
         {
             id: "ubc-thunderbots",
-            role: "Electrical Team Member",
+            role: "Electrical Engineer",
             company: "UBC Thunderbots",
             location: "University of British Columbia",
             period: "Sep 2024 – Present",
                 logo: "photos/logos/ubc_thunderbots_logo.jpg",
             responsibilities: [
+                "Spearheaded a major schematic and PCB layout redesign for a BLDC motor driver, incorporating a new current sensing architecture and on-board CAN communication to elevate control precision and network capability.",
                 "Designed a CAN 2.0B hardware module to enable reliable communication between Raspberry Pi and motor drivers.",
-                "Spearheaded a major PCB layout overhaul for a BLDC motor driver, incorporating a new current sensing architecture and on-board CAN communication to elevate control precision and network capability.",
-                "Debugged and validated motor driver, power, and UI hardware using laboratory equipment such as oscilloscopes, logic analyzers, and multimeters to identify and resolve hardware issues.",
-                "Develop and debug SPI communication and BLDC motor control C firmware for STSPIN32F0251 motor drivers."
+                "Debugged and validated motor driver, power distribution, and user interface firmware and hardware using oscilloscopes, logic analyzers, and multimeters; resolved signal integrity and timing issues.",
+                "Develop and debug SPI communication and BLDC motor control firmware in C for STSPIN32F0251 motor drivers.",
+                "Leading a power distribution board overhaul: redesigning auto-discharge and flyback converter circuitry, integrating an onboard brushed DC motor for the robot's dribbling mechanism, and executing the full PCB layout."
             ]
         },
         {
             id: "consen-hw-verification",
-            role: "Hardware Verification Engineer - Intern",
+            role: "Hardware Verification Engineer – Intern",
             company: "Consen Automation",
             location: "Beijing, China",
             period: "May 2025 – Aug 2025",
                 logo: "photos/logos/consen_automation_logo.jpg",
             responsibilities: [
-                "Developed and executed hardware verification procedures for 5+ communication module PCBAs, testing power, clock signals, logic and status lines, reset, ripple/noise levels, and timing performance; researched component characteristics to create robust test plans.",
-                "Collaborated on building and configuring test environments to support hardware verification procedures, including simulating real load conditions for accurate and reliable testing.",
-                "Supported environmental compliance testing (thermal shock, temperature cycling, and ESD) for multiple in-house communication module PCBs."
+                "Owned end-to-end hardware verification for 5+ communication module PCBAs — power rails, clock signals, logic and status lines, reset behaviour, ripple/noise, and timing performance. Authored test plans from datasheet-level component research.",
+                "Designed complete CAN-to-fiber communication module prototype from schematic through PCB layout and manufacturing bring-up using Cadence Allegro/OrCAD for industrial safety-critical applications.",
+                "Designed and implemented custom test environments including real-load simulation setups to support hardware verification procedures."
             ]
         },
         {
             id: "consen-hw-engineer",
-            role: "Hardware Engineer - Intern",
+            role: "Hardware R&D Intern",
             company: "Consen Automation",
             location: "Beijing, China",
             period: "May 2024 – Aug 2024",
                 logo: "photos/logos/consen_automation_logo.jpg",
             responsibilities: [
-                "Designed CAN-to-fiber communication module schematic and PCB using Cadence Allegro/OrCAD for industrial safety systems.",
-                "Performed hardware bring-up and debugging across CAN, RS485, SPI, USART, and fiber optic interfaces.",
-                "Conducted design verification and collaborated across teams to ensure compliance with functional requirements."
+                "Performed board bring-up and functional checks on prototype assemblies, including rework/soldering, power rail verification, and signal probing with oscilloscope and logic analyzer.",
+                "Supported test environment construction and configuration for hardware verification procedures.",
+                "Documented bring-up findings, failure modes, and design observations for engineering review, supporting revision decisions on in-house PCB designs."
             ]
         }
         
