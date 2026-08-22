@@ -180,7 +180,7 @@ const SITE_CONFIG = {
             id: "motordriver-v6-4",
             title: "MotorDriver V6.4 - UBC Thunderbots",
             tools: "Altium Designer, Circuit Design, PCB Design, Power Electronics, EMI&EMC",
-            description: "Currently redesigning the BLDC motordriver for UBC Thunderbots student design team.",
+            description: "Page is still work in progress, but feel free to look at what I have so far!",
             link: "projects/project-motordriver-v6-4.html"
         }
     ],
