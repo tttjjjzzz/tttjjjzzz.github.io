@@ -453,8 +453,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #e9d5ff, #a78bfa, #6d28d9, #a78bfa);
-    background-size: 300% 300%;
     opacity: 0;
     z-index: 0;
     border-radius: 1.5rem;
@@ -462,7 +460,7 @@ body {
 }
 
 .project-card:hover::before {
-    opacity: 0.8; /* static gradient, no sliding fill */
+    opacity: 0;
 }
 
 .project-card > * {
@@ -515,7 +513,21 @@ body {
     justify-content: center;
     opacity: 0;
     z-index: 2;
-    transition: opacity 0.25s ease 0.1s;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-overlay img {
+    opacity: 0.65;
+}
+
+.project-card-overlay .text-white {
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.project-card-overlay svg {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7));
 }
 
 .project-card:hover .project-card-overlay {

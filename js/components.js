@@ -120,14 +120,17 @@ function generateProjectCard(project) {
                     </div>
                 </div>
             </div>
-            <div class="project-card-overlay">
-                <div class="text-center px-6">
-                    <svg class="w-16 h-16 mx-auto mb-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
-                    </svg>
-                    <p class="text-2xl font-bold text-white">Click to Learn More</p>
+            ${project.coverImage ? `<div class="project-card-overlay">
+                <img src="${project.coverImage}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover rounded-3xl">
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <div class="text-center px-6">
+                        <svg class="w-16 h-16 mx-auto mb-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                        </svg>
+                        <p class="text-2xl font-display font-light tracking-wide text-white">Click to Learn More</p>
+                    </div>
                 </div>
-            </div>
+            </div>` : ''}
         </a>
     `;
 }

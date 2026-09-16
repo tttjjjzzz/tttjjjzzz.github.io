@@ -146,42 +146,48 @@ const SITE_CONFIG = {
             title: "CAN Bus to Fibre Optic Conversion Module",
             tools: "Cadence Allegro, OrCAD, Circuit Design, PCB Design, CAN Protocol",
             description: "Using Cadence software, collaborated on circuit and PCB design based on the design specifications, and conducted hardware verifiction to optimize PCB.",
-            link: "projects/project-can-fiber.html"
+            link: "projects/project-can-fiber.html",
+            coverImage: "photos/project-can-fiber/overviewOfModuleImplementation.png"
         },
         {
             id: "comm-verification",
             title: "Communication Module Verification Procedures",
             tools: "Oscilloscope, Logic Analyzer, SMD/THT Soldering, Cadence Allegro, OrCad",
             description: "Designed and conducted hardware verification procedures based on parametric specifications to test power, clock, logic and status, reset, ripple and noise, and timing signals on various communication PCB modules.",
-            link: "projects/project-comm-verification.html"
+            link: "projects/project-comm-verification.html",
+            coverImage: "photos/project-comm-verification/I2CCompliance.png"
         },
         {
             id: "stirling-fridge",
             title: "Stirling Refrigerator for Vaccine Storage",
             tools: "Altium Designer, Circuit Design, PCB Design, ESP-32, C++,Python Scripting, Sensor Integration, LabJack, SMD/THT Soldering",
             description: "Designed, configured, and implemented multiple hardware and software/firmware components for a Stirling Refridgeration system. Enter this page to view all project components.",
-            link: "projects/project-stirling-fridge.html"
+            link: "projects/project-stirling-fridge.html",
+            coverImage: "photos/project-stirling-fridge/stirlingRefridgeBirdEye.png"
         },
         {
             id: "bt-segway-robot",
             title: "Bluetooth-Controlled Segway Robot",
             tools: "KiCad, Circuit Design, PCB Design, STM32, Bluetooh 2.0, C, FreeRTOS",
             description: "Designing custom STM32-based PCB hardware and firmware for bluetooth-controlled SegWay robot, also with the goal of building foundational components to support future additions, such as obstacle detection and autonomous driving.",
-            link: "projects/project-bt-segway.html"
+            link: "projects/project-bt-segway.html",
+            coverImage: "photos/project-bt-segway/mainSheet.png"
         },
         {
             id: "can-2b-module",
             title: "CAN 2.0B Module",
             tools: "Altium Designer, Circuit Design, PCB Design, CAN Protocol",
             description: "Developed CAN 2.0B Module designed to interface with and test SPI to CAN communication migration for various motor drivers and a RaspberryPi Computer.",
-            link: "projects/project-can-2b.html"
+            link: "projects/project-can-2b.html",
+            coverImage: "photos/project-can-2b/schematicOverview.png"
         },
         {
             id: "motordriver-v6-4",
             title: "MotorDriver V6.4 - UBC Thunderbots",
             tools: "Altium Designer, Circuit Design, PCB Design, Power Electronics, EMI&EMC",
             description: "Page is still work in progress, but feel free to look at what I have so far!",
-            link: "projects/project-motordriver-v6-4.html"
+            link: "projects/project-motordriver-v6-4.html",
+            coverImage: "photos/project-MDV6.4/PCBFrontView.png"
         }
     ],
 
